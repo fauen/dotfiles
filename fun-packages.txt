@@ -1,0 +1,59 @@
+cowsay
+ex. cowsay "moo moo moo"
+cowsay -f ghostbusters "who you gonna call"
+
+cowthink
+like cowsay but a thinking bubble
+
+sl
+choo choo train
+
+figlet
+ex. figlet Welcome
+
+toilet
+ex. toilet Welcome
+toilet -f mono12 -F metal Linux
+
+fortune
+ex. fortune | cowsay
+fortune -s for smaller text
+
+cmatrix
+ex. cmatrix -s
+
+rev
+reverses text
+
+telnet towel.blinkenlights.nl
+
+pi
+ex. pi 50
+prints pi numbers
+
+aview
+ex. asciiview <image> -driver curses
+make sure to install netpbm as well to view it and use asciiview
+
+aafire
+terminal fire
+
+bb
+audio visual demo in the terminal
+
+espeak
+ex. espeak "Hello, this is the internet"
+make computer speak
+
+rig
+fake identities
+
+lolcat
+rainbow stuff
+
+screenfetch
+github project, have to add ppa on Ubuntu to get it to work
+
+neofetch
+tty-clock
+

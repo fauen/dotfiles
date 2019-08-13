@@ -1,0 +1,2 @@
+# Make sure to link this to ~/.ssh.config or else it will not work
+VisualHostKey=yes
