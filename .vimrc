@@ -54,6 +54,7 @@ nnoremap ,html :-1read $HOME/.vim/.vim-template.html<CR>2j7la
 nnoremap ,bash :-1read $HOME/.vim/.vim-template.bash<CR>3ji
 nnoremap ,date :pu=strftime('%Y-%m-%d')<CR>
 nnoremap ,wiki \ww
+nnoremap ,gen :VimwikiDiaryGenerateLinks<CR>
 
 " Do it right
 nnoremap <Left> :echoe "Use h"<CR>
