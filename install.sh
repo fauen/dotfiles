@@ -10,35 +10,35 @@ sudo apt update && sudo apt upgrade -y
 
 # Check if git is installed, if not install it.
 if ! [ -x "$(command -v git)" ]; then
-	sudo apt install git
+	sudo apt install -y git
 else
 	echo "git already installed."
 fi
 
 # Check if tmux is installed, if not install it.
 if ! [ -x "$(command -v tmux)" ]; then
-	sudo apt install tmux
+	sudo apt install -y tmux
 else
 	echo "tmux already installed."
 fi
 
 # Check if weechat is installed, if not install it.
 if ! [ -x "$(command -v weechat)" ]; then
-	sudo apt install weechat
+	sudo apt install -y weechat
 else
 	echo "weechat already installed."
 fi
 
 # Check if vim is installed, if not install it.
 if ! [ -x "$(command -v vim)" ]; then
-	sudo apt install vim
+	sudo apt install -y vim
 else
 	echo "vim already installed."
 fi
 
 # Check if ssh is installed, if not install it.
 if ! [ -x "$(command -v ssh)" ]; then
-	sudo apt install openssh-server
+	sudo apt install -y openssh-server
 else
 	echo "openssh-server already installed."
 fi
@@ -64,5 +64,5 @@ vim +PluginInstall +qall
 
 # Cleaning
 sudo apt autoremove
-\n
-echo "Make sure to clone your other repos."
+
+echo "\nMake sure to clone your other repos."
