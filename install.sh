@@ -1,5 +1,9 @@
 #!/bin/bash
 
+red='\033[0;31m'
+green='\033[0;32m'
+nc='\033[0m'
+
 # These are the packages that I want to have when I setup a new machine.
 # Many of them are stupid but you need stupid in the terminal!
 
@@ -7,6 +11,9 @@ sudo -v
 
 # Update the cache and install updates before starting
 sudo apt update && sudo apt upgrade -y
+
+# Clear the terminal after the updates are done
+clear
 
 # Check if git is installed, if not install it.
 if ! [ -x "$(command -v git)" ]; then
@@ -43,6 +50,40 @@ else
 	echo "openssh-server already installed."
 fi
 
+# Clear the terminal after everything is installed
+clear
+
+# Information that everything is installed 
+if ! [ -x "$(command -v git)" ]; then
+	printf "${red}git not installed!\n"
+else
+	printf "${green}git installed!\n"
+fi
+
+if ! [ -x "$(command -v tmux)" ]; then
+	printf "${red}tmux not installed!\n"
+else
+	printf "${green}tmux installed!\n"
+fi
+
+if ! [ -x "$(command -v weechat)" ]; then
+	printf "${red}weechat not installed!\n"
+else
+	printf "${green}weechat installed!\n"
+fi
+
+if ! [ -x "$(command -v vim)" ]; then
+	printf "${red}vim not installed!\n"
+else
+	printf "${green}vim installed!\n"
+fi
+
+if ! [ -x "$(command -v ssh)" ]; then
+	printf "${red}ssh not installed!\n"
+else
+	printf "${green}ssh installed!\n"
+fi
+
 # Create some directories
 mkdir $HOME/.ssh
 mkdir $HOME/.tmux
@@ -65,4 +106,4 @@ vim +PluginInstall +qall
 # Cleaning
 sudo apt autoremove
 
-echo "\nMake sure to clone your other repos."
+printf "${red}Make sure to clone your other repos.\n"
