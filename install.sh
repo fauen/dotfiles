@@ -81,7 +81,7 @@ fi
 if ! [ -x "$(command -v ssh)" ]; then
 	printf "${red}ssh not installed!\n"
 else
-	printf "${green}ssh installed!\n"
+	printf "${green}ssh installed!${nc}\n"
 fi
 
 # Create some directories
@@ -104,6 +104,6 @@ ln -s $HOME/dotfiles/.vim-template.bash $HOME/.vim/$filename
 vim +PluginInstall +qall
 
 # Cleaning
-sudo apt autoremove
+sudo apt autoremove -y
 
 printf "${red}Make sure to clone your other repos.\n"
