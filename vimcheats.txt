@@ -1,455 +1,455 @@
-# Vim Cheat Sheet
-# 
-# Global
-# -------
-# :help keyword - open help for keyword
-# :e file - edit file (use this instead of :o (open))
-# :o file - open file
-# :saveas file - save file as
-# :close - close current pane
-# K - open man page for word under the cursor
-# 
-# Cursor movement
-# ----------------
-# h - move cursor left
-# j - move cursor down
-# k - move cursor up
-# l - move cursor right
-# H - move to top of screen (H = High)
-# M - move to middle of screen (M = Middle)
-# L - move to bottom of screen (L = Low)
-# w - jump forward to the start of a word
-# W - jump forward to the start of a word (words can contain punctuation)
-# e - jump forward to the end of a word
-# E - jump forward to the end of a word (words can contain punctuation)
-# b - jump backward to the start of a word
-# B - jump backward to the start of a word (words can contain punctuation)
-# % - move to matching character (default supported pairs: '()', '{}', '[]' - use :h matchpairs in vim for more infor)
-# 0 - jump to the start of the line
-# ^ - jump to the first non-blank character of the line
-# $ - jump to the end of the line
-# g_ - jump to the last non-blank character of the line
-# gg - go to the first line of the document
-# G - go to the last line of the document
-# 5G - go to line 5
-# 5gg - to to line 5
-# fx - jump to next occurrence of character x
-# tx - jump to before next occurrance of character x
-# } - jump to next paragraph (or function/block, when editing code)
-# { - jump to previous paragraph (or function/block, when editing code)
-# zz - center cursor on screen
-# zt - move where the cursor is on to the top of the screen
-# zb - move where the cursor is on to the bottom of the screen
-# ^b - move back one full screen
-# ^f - move forward one full screen
-# ^u - move back 1/2 a screen
-# ^d - move forward 1/2 a screen
-# n% - move cursor position n% of the document
-# eg. 90% will take you 90% down the document
-# 
-# Insert mode - inserting/appending text
-# ---------------------------------------
-# i - insert before the cursor
-# I - insert at the beginning of the line
-# a - insert (append) after the cursor
-# A - insert (append) at the end of the line
-# o - append (open) a new line below the current line
-# O - append (open) a new line above the current line
-# ea - insert (append) at the end of the word
-# Esc - exit insert mode
-# 
-# Editing
-# --------
-# r - replace a single character
-# J - join line below to the current one
-# cc - change (replace) entire line
-# cw - change (replace) to the end of the word
-# c$ - change (replace) to the end of the line
-# s - delete character and substitute text
-# S - delete line and substitute text (same as cc)
-# xp - transpose two letters (delete and paste)
-# u - undo
-# ^r - redo
-# . - repeat last command
-# >> - indent line
-# << - outdent line
-# 
-# Cut and paste
-# --------------
-# yy - yank (copy) a line
-# 2yy - yank (copy) 2 lines
-# yw - yank (copy) the characters of the word from the cursor position to the start of the next word
-# y$ - yank (copy) to the end of line
-# p - put (paste) the clipboard after cursor
-# P - put (paste) before cursor
-# dd - delete (cut) a line
-# 2dd - delete (cut) 2 lines
-# dw - delete (cut) the characters of the word from the cursor position to the start of the next word
-# D - delete (cut) to the end of the line
-# d$ - delete (cut) to the end of the line
-# x - delete (cut) character
-# 
-# Exiting
-# --------
-# :w - write (save) the file, but don't exit
-# :w !sudo tee % - write out the current file using sudo
-# :wq - write (save) and quit
-# :x - same as :wq
-# ZZ - same as :wq
-# :q - quit (fails if there are unsaved changes)
-# :q! - quit and throw away unsaved changes
-# ZQ - same as :q!
-# 
-# Marking text (visual mode)
-# ---------------------------
-# v - start visual mode, mark lines, then do a command (like y-yank)
-# V - start linewise visual mode
-# o - move to other end of a marked area
-# ^v - start visual block mode
-# O - move to other corner of block
-# aw - mark a word
-# ab - a block with ()
-# aB - a block with {}
-# ib - inner block with ()
-# iB - inner block with {}
-# Esc - exit visual mode
-# 
-# Visual commands
-# ----------------
-# > - shift text right
-# < - shift text left
-# y - yank (copy) marked text
-# d - delete marked text
-# ~ - switch case
-# 
-# Search and replace
-# -------------------
-# /pattern - search for pattern
-# ?pattern - search backwards for pattern
-# \vpattern - 'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
-# n - repeat search in same direction
-# N - repeat search in opposite direction
-# :%s/old/new/g - replace all old with new throughout file
-# :%s/old/new/gc - replace all old with new throughout file with confirmations
-# :noh remove highlighting of search matches
-# * - searches for the word you are currently on and takes you to the next occurrence
-# £ - same as * but reverse
-# 
-# Search in multiple files
-# -------------------------
-# :vimgrep /pattern/ {file} - search for pattern in multiple files
-# eg. :vimgrep /foo/ **/*
-# :cn - jump to the next match
-# :cp - jump to the previous match
-# :copen - open a window containing the list of matches
-# 
-# Working with multiple files
-# ----------------------------
-# :e file - edit a file in a new buffer
-# :bn - go to the next buffer
-# :bnext - same as :bn
-# :bp - go to the previous buffer
-# :bprev - same as :bp
-# :bd - delete a buffer (close a file)
-# :ls - list all open buffers
-# :sp file - open a file in a new buffer and split window
-# :vsp file - open a file in a new buffer and vertically split window
-# ^ws - split window
-# ^ww - switch windows
-# ^wq - quit a window
-# ^wv - split window vertically
-# ^wh - move cursor to the left window (vertical split)
-# ^wj - move cursor to the window below (horizontal split)
-# ^wk - move cursor to the window above (horicontal split)
-# ^wl - move cursor to the right window (vertical split)
-# 
-# Tabs
-# -----
-# :tabnew - open a file in a new tab
-# :tabnew file - open a file in a new tab
-# ^wT - move the current split window into its own tab
-# gt - move to next tab
-# :tabnext - same as gt
-# :tabn - same as gt
-# gT - move to the previous tab
-# :tabprev - same as gT
-# :tabp - same as gT
-# #gt - move to tab number #
-# :tabmove # - move current tab to the #th position (indexed from 0)
-# :tabclose - close the current tab and all its windows
-# :tabc - same as :tabclose
-# :tabonly - close all tabs except for the current one
-# :tabo - same as :tabonly
-# :tabdo command - run the command on all tabs
-# eg. :tabdo q - closes all opened tabs)
-# 
-# Registers
-# ----------
-# :reg - show registers content
-# "xy - yank into register x
-# "xp - paste contents of register x
-# 
-# Good to know: Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.
-# Register O always contains the value of the last yank command
-# 
-# Marks
-# ------
-# :marks - list of marks
-# ma - set current position for mark A
-# `a - jump to position of mark A
-# y`a - yank text to position of mark A
-# 
-# Macros
-# -------
-# qa - record macro a
-# q - stop recording macro
-# @a - run macro a
-# @@ - rerun last run macro
-# 
-# Tips and tricks
-# ----------------
-# White space problems? Have you copied a file from a site and there is a lot of spaces after every line? Do a macro!
-# qag_ld$q
-# qa, will record macro a, g_ will take you to the end of the last word at the line you have your cursor positioned, l will move the cursor right one character, d$ will delete everything from cursor position to end of line.
-# 
-# Want to add a # in the beginning of specific lines or the whole document?
-# :207,211s!^!#!
-# :207,211s means line 207 to 211, the ! could be changed to other hyphen delimited characters such as , . - /, we then use ^ to specify beginning of the line and % because that is what we want.
-# 
-# Other things which are good to have is these settings:
-# :set number - this will show you the line numbers
-# :set relativenumber - this will show you the line number you are on and the relative numbers from your cursor position which is handy for yanking or deleting multiple lines.
-# You can always remove those options by addind no to the commands like :set nonumber
-# :syntax on is also a good one if you are editing code.
+Vim Cheat Sheet
+
+Global
+-------
+:help keyword - open help for keyword
+:e file - edit file (use this instead of :o (open))
+:o file - open file
+:saveas file - save file as
+:close - close current pane
+K - open man page for word under the cursor
+
+Cursor movement
+----------------
+h - move cursor left
+j - move cursor down
+k - move cursor up
+l - move cursor right
+H - move to top of screen (H = High)
+M - move to middle of screen (M = Middle)
+L - move to bottom of screen (L = Low)
+w - jump forward to the start of a word
+W - jump forward to the start of a word (words can contain punctuation)
+e - jump forward to the end of a word
+E - jump forward to the end of a word (words can contain punctuation)
+b - jump backward to the start of a word
+B - jump backward to the start of a word (words can contain punctuation)
+% - move to matching character (default supported pairs: '()', '{}', '[]' - use :h matchpairs in vim for more infor)
+0 - jump to the start of the line
+^ - jump to the first non-blank character of the line
+$ - jump to the end of the line
+g_ - jump to the last non-blank character of the line
+gg - go to the first line of the document
+G - go to the last line of the document
+5G - go to line 5
+5gg - to to line 5
+fx - jump to next occurrence of character x
+tx - jump to before next occurrance of character x
+} - jump to next paragraph (or function/block, when editing code)
+{ - jump to previous paragraph (or function/block, when editing code)
+zz - center cursor on screen
+zt - move where the cursor is on to the top of the screen
+zb - move where the cursor is on to the bottom of the screen
+^b - move back one full screen
+^f - move forward one full screen
+^u - move back 1/2 a screen
+^d - move forward 1/2 a screen
+n% - move cursor position n% of the document
+eg. 90% will take you 90% down the document
+
+Insert mode - inserting/appending text
+---------------------------------------
+i - insert before the cursor
+I - insert at the beginning of the line
+a - insert (append) after the cursor
+A - insert (append) at the end of the line
+o - append (open) a new line below the current line
+O - append (open) a new line above the current line
+ea - insert (append) at the end of the word
+Esc - exit insert mode
+
+Editing
+--------
+r - replace a single character
+J - join line below to the current one
+cc - change (replace) entire line
+cw - change (replace) to the end of the word
+c$ - change (replace) to the end of the line
+s - delete character and substitute text
+S - delete line and substitute text (same as cc)
+xp - transpose two letters (delete and paste)
+u - undo
+^r - redo
+. - repeat last command
+>> - indent line
+<< - outdent line
+
+Cut and paste
+--------------
+yy - yank (copy) a line
+2yy - yank (copy) 2 lines
+yw - yank (copy) the characters of the word from the cursor position to the start of the next word
+y$ - yank (copy) to the end of line
+p - put (paste) the clipboard after cursor
+P - put (paste) before cursor
+dd - delete (cut) a line
+2dd - delete (cut) 2 lines
+dw - delete (cut) the characters of the word from the cursor position to the start of the next word
+D - delete (cut) to the end of the line
+d$ - delete (cut) to the end of the line
+x - delete (cut) character
+
+Exiting
+--------
+:w - write (save) the file, but don't exit
+:w !sudo tee % - write out the current file using sudo
+:wq - write (save) and quit
+:x - same as :wq
+ZZ - same as :wq
+:q - quit (fails if there are unsaved changes)
+:q! - quit and throw away unsaved changes
+ZQ - same as :q!
+
+Marking text (visual mode)
+---------------------------
+v - start visual mode, mark lines, then do a command (like y-yank)
+V - start linewise visual mode
+o - move to other end of a marked area
+^v - start visual block mode
+O - move to other corner of block
+aw - mark a word
+ab - a block with ()
+aB - a block with {}
+ib - inner block with ()
+iB - inner block with {}
+Esc - exit visual mode
+
+Visual commands
+----------------
+> - shift text right
+< - shift text left
+y - yank (copy) marked text
+d - delete marked text
+~ - switch case
+
+Search and replace
+-------------------
+/pattern - search for pattern
+?pattern - search backwards for pattern
+\vpattern - 'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
+n - repeat search in same direction
+N - repeat search in opposite direction
+:%s/old/new/g - replace all old with new throughout file
+:%s/old/new/gc - replace all old with new throughout file with confirmations
+:noh remove highlighting of search matches
+* - searches for the word you are currently on and takes you to the next occurrence
+£ - same as * but reverse
+
+Search in multiple files
+-------------------------
+:vimgrep /pattern/ {file} - search for pattern in multiple files
+eg. :vimgrep /foo/ **/*
+:cn - jump to the next match
+:cp - jump to the previous match
+:copen - open a window containing the list of matches
+
+Working with multiple files
+----------------------------
+:e file - edit a file in a new buffer
+:bn - go to the next buffer
+:bnext - same as :bn
+:bp - go to the previous buffer
+:bprev - same as :bp
+:bd - delete a buffer (close a file)
+:ls - list all open buffers
+:sp file - open a file in a new buffer and split window
+:vsp file - open a file in a new buffer and vertically split window
+^ws - split window
+^ww - switch windows
+^wq - quit a window
+^wv - split window vertically
+^wh - move cursor to the left window (vertical split)
+^wj - move cursor to the window below (horizontal split)
+^wk - move cursor to the window above (horicontal split)
+^wl - move cursor to the right window (vertical split)
+
+Tabs
+-----
+:tabnew - open a file in a new tab
+:tabnew file - open a file in a new tab
+^wT - move the current split window into its own tab
+gt - move to next tab
+:tabnext - same as gt
+:tabn - same as gt
+gT - move to the previous tab
+:tabprev - same as gT
+:tabp - same as gT
+#gt - move to tab number #
+:tabmove # - move current tab to the #th position (indexed from 0)
+:tabclose - close the current tab and all its windows
+:tabc - same as :tabclose
+:tabonly - close all tabs except for the current one
+:tabo - same as :tabonly
+:tabdo command - run the command on all tabs
+eg. :tabdo q - closes all opened tabs)
+
+Registers
+----------
+:reg - show registers content
+"xy - yank into register x
+"xp - paste contents of register x
+
+Good to know: Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.
+Register O always contains the value of the last yank command
+
+Marks
+------
+:marks - list of marks
+ma - set current position for mark A
+`a - jump to position of mark A
+y`a - yank text to position of mark A
+
+Macros
+-------
+qa - record macro a
+q - stop recording macro
+@a - run macro a
+@@ - rerun last run macro
+
+Tips and tricks
+----------------
+White space problems? Have you copied a file from a site and there is a lot of spaces after every line? Do a macro!
+qag_ld$q
+qa, will record macro a, g_ will take you to the end of the last word at the line you have your cursor positioned, l will move the cursor right one character, d$ will delete everything from cursor position to end of line.
+
+Want to add a # in the beginning of specific lines or the whole document?
+:207,211s!^!#!
+:207,211s means line 207 to 211, the ! could be changed to other hyphen delimited characters such as , . - /, we then use ^ to specify beginning of the line and % because that is what we want.
+
+Other things which are good to have is these settings:
+:set number - this will show you the line numbers
+:set relativenumber - this will show you the line number you are on and the relative numbers from your cursor position which is handy for yanking or deleting multiple lines.
+You can always remove those options by addind no to the commands like :set nonumber
+:syntax on is also a good one if you are editing code.
 =======
-# Vim Cheat Sheet
-# 
-# Global
-# -------
-# :help keyword - open help for keyword
-# :o file - open file
-# :saveas file - save file as
-# :close - close current pane
-# K - open man page for word under the cursor
-# 
-# Cursor movement
-# ----------------
-# h - move cursor left
-# j - move cursor down
-# k - move cursor up
-# l - move cursor right
-# H - move to top of screen (H = High)
-# M - move to middle of screen (M = Middle)
-# L - move to bottom of screen (L = Low)
-# w - jump forward to the start of a word
-# W - jump forward to the start of a word (words can contain punctuation)
-# e - jump forward to the end of a word
-# E - jump forward to the end of a word (words can contain punctuation)
-# b - jump backward to the start of a word
-# B - jump backward to the start of a word (words can contain punctuation)
-# % - move to matching character (default supported pairs: '()', '{}', '[]' - use :h matchpairs in vim for more infor)
-# 0 - jump to the start of the line
-# ^ - jump to the first non-blank character of the line
-# $ - jump to the end of the line
-# g_ - jump to the last non-blank character of the line
-# gg - go to the first line of the document
-# G - go to the last line of the document
-# 5G - go to line 5
-# 5gg - to to line 5
-# fx - jump to next occurrence of character x
-# tx - jump to before next occurrance of character x
-# } - jump to next paragraph (or function/block, when editing code)
-# { - jump to previous paragraph (or function/block, when editing code)
-# zz - center cursor on screen
-# zt - move where the cursor is on to the top of the screen
-# zb - move where the cursor is on to the bottom of the screen
-# ^b - move back one full screen
-# ^f - move forward one full screen
-# ^u - move back 1/2 a screen
-# ^d - move forward 1/2 a screen
-# n% - move cursor position n% of the document
-# eg. 90% will take you 90% down the document
-# 
-# Insert mode - inserting/appending text
-# ---------------------------------------
-# i - insert before the cursor
-# I - insert at the beginning of the line
-# a - insert (append) after the cursor
-# A - insert (append) at the end of the line
-# o - append (open) a new line below the current line
-# O - append (open) a new line above the current line
-# ea - insert (append) at the end of the word
-# Esc - exit insert mode
-# 
-# Editing
-# --------
-# r - replace a single character
-# J - join line below to the current one
-# cc - change (replace) entire line
-# cw - change (replace) to the end of the word
-# c$ - change (replace) to the end of the line
-# s - delete character and substitute text
-# S - delete line and substitute text (same as cc)
-# xp - transpose two letters (delete and paste)
-# u - undo
-# ^r - redo
-# . - repeat last command
-# >> - indent line
-# << - outdent line
-# 
-# Cut and paste
-# --------------
-# yy - yank (copy) a line
-# 2yy - yank (copy) 2 lines
-# yw - yank (copy) the characters of the word from the cursor position to the start of the next word
-# y$ - yank (copy) to the end of line
-# p - put (paste) the clipboard after cursor
-# P - put (paste) before cursor
-# dd - delete (cut) a line
-# 2dd - delete (cut) 2 lines
-# dw - delete (cut) the characters of the word from the cursor position to the start of the next word
-# D - delete (cut) to the end of the line
-# d$ - delete (cut) to the end of the line
-# x - delete (cut) character
-# 
-# Exiting
-# --------
-# :w - write (save) the file, but don't exit
-# :w !sudo tee % - write out the current file using sudo
-# :wq - write (save) and quit
-# :x - same as :wq
-# ZZ - same as :wq
-# :q - quit (fails if there are unsaved changes)
-# :q! - quit and throw away unsaved changes
-# ZQ - same as :q!
-# 
-# Marking text (visual mode)
-# ---------------------------
-# v - start visual mode, mark lines, then do a command (like y-yank)
-# V - start linewise visual mode
-# o - move to other end of a marked area
-# ^v - start visual block mode
-# O - move to other corner of block
-# aw - mark a word
-# ab - a block with ()
-# aB - a block with {}
-# ib - inner block with ()
-# iB - inner block with {}
-# Esc - exit visual mode
-# 
-# Visual commands
-# ----------------
-# > - shift text right
-# < - shift text left
-# y - yank (copy) marked text
-# d - delete marked text
-# ~ - switch case
-# 
-# Search and replace
-# -------------------
-# /pattern - search for pattern
-# ?pattern - search backwards for pattern
-# \vpattern - 'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
-# n - repeat search in same direction
-# N - repeat search in opposite direction
-# :%s/old/new/g - replace all old with new throughout file
-# :%s/old/new/gc - replace all old with new throughout file with confirmations
-# :noh remove highlighting of search matches
-# * - searches for the word you are currently on and takes you to the next occurrence
-# £ - same as * but reverse
-# 
-# Search in multiple files
-# -------------------------
-# :vimgrep /pattern/ {file} - search for pattern in multiple files
-# eg. :vimgrep /foo/ **/*
-# :cn - jump to the next match
-# :cp - jump to the previous match
-# :copen - open a window containing the list of matches
-# 
-# Working with multiple files
-# ----------------------------
-# :e file - edit a file in a new buffer
-# :bn - go to the next buffer
-# :bnext - same as :bn
-# :bp - go to the previous buffer
-# :bprev - same as :bp
-# :bd - delete a buffer (close a file)
-# :ls - list all open buffers
-# :sp file - open a file in a new buffer and split window
-# :vsp file - open a file in a new buffer and vertically split window
-# ^ws - split window
-# ^ww - switch windows
-# ^wq - quit a window
-# ^wv - split window vertically
-# ^wh - move cursor to the left window (vertical split)
-# ^wj - move cursor to the window below (horizontal split)
-# ^wk - move cursor to the window above (horicontal split)
-# ^wl - move cursor to the right window (vertical split)
-# 
-# Tabs
-# -----
-# :tabnew - open a file in a new tab
-# :tabnew file - open a file in a new tab
-# ^wT - move the current split window into its own tab
-# gt - move to next tab
-# :tabnext - same as gt
-# :tabn - same as gt
-# gT - move to the previous tab
-# :tabprev - same as gT
-# :tabp - same as gT
-# #gt - move to tab number #
-# :tabmove # - move current tab to the #th position (indexed from 0)
-# :tabclose - close the current tab and all its windows
-# :tabc - same as :tabclose
-# :tabonly - close all tabs except for the current one
-# :tabo - same as :tabonly
-# :tabdo command - run the command on all tabs
-# eg. :tabdo q - closes all opened tabs)
-# 
-# Registers
-# ----------
-# :reg - show registers content
-# "xy - yank into register x
-# "xp - paste contents of register x
-# 
-# Good to know: Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.
-# Register O always contains the value of the last yank command
-# 
-# Marks
-# ------
-# :marks - list of marks
-# ma - set current position for mark A
-# `a - jump to position of mark A
-# y`a - yank text to position of mark A
-# 
-# Macros
-# -------
-# qa - record macro a
-# q - stop recording macro
-# @a - run macro a
-# @@ - rerun last run macro
-# 
-# Tips and tricks
-# ----------------
-# White space problems? Have you copied a file from a site and there is a lot of spaces after every line? Do a macro!
-# qag_ld$q
-# qa, will record macro a, g_ will take you to the end of the last word at the line you have your cursor positioned, l will move the cursor right one character, d$ will delete everything from cursor position to end of line.
-# 
-# Want to add a # in the beginning of specific lines or the whole document?
-# :207,211s!^!#!
-# :207,211s means line 207 to 211, the ! could be changed to other hyphen delimited characters such as , . - /, we then use ^ to specify beginning of the line and # because that is what we want.
-# 
-# Other things which are good to have is these settings:
-# :set number - this will show you the line numbers
-# :set relativenumber - this will show you the line number you are on and the relative numbers from your cursor position which is handy for yanking or deleting multiple lines.
-# You can always remove those options by addind no to the commands like :set nonumber
-# :syntax on is also a good one if you are editing code.
-# When opening a file from a Microsoft system run :e ++ff=dos file
-# That will remove the ^M characters
-# remove everything before character:
-# sldgkhslgkhasgHELLO
-# qwertyHELLO
-# :s%/.*HELLO/HELLO/
-# this is the greedy option and will eat everything until is finds the last HHELLO on the line
-# non-greedy option looks like this:
-# :%s/.\{-}HELLO/HELLO
+Vim Cheat Sheet
+
+Global
+-------
+:help keyword - open help for keyword
+:o file - open file
+:saveas file - save file as
+:close - close current pane
+K - open man page for word under the cursor
+
+Cursor movement
+----------------
+h - move cursor left
+j - move cursor down
+k - move cursor up
+l - move cursor right
+H - move to top of screen (H = High)
+M - move to middle of screen (M = Middle)
+L - move to bottom of screen (L = Low)
+w - jump forward to the start of a word
+W - jump forward to the start of a word (words can contain punctuation)
+e - jump forward to the end of a word
+E - jump forward to the end of a word (words can contain punctuation)
+b - jump backward to the start of a word
+B - jump backward to the start of a word (words can contain punctuation)
+% - move to matching character (default supported pairs: '()', '{}', '[]' - use :h matchpairs in vim for more infor)
+0 - jump to the start of the line
+^ - jump to the first non-blank character of the line
+$ - jump to the end of the line
+g_ - jump to the last non-blank character of the line
+gg - go to the first line of the document
+G - go to the last line of the document
+5G - go to line 5
+5gg - to to line 5
+fx - jump to next occurrence of character x
+tx - jump to before next occurrance of character x
+} - jump to next paragraph (or function/block, when editing code)
+{ - jump to previous paragraph (or function/block, when editing code)
+zz - center cursor on screen
+zt - move where the cursor is on to the top of the screen
+zb - move where the cursor is on to the bottom of the screen
+^b - move back one full screen
+^f - move forward one full screen
+^u - move back 1/2 a screen
+^d - move forward 1/2 a screen
+n% - move cursor position n% of the document
+eg. 90% will take you 90% down the document
+
+Insert mode - inserting/appending text
+---------------------------------------
+i - insert before the cursor
+I - insert at the beginning of the line
+a - insert (append) after the cursor
+A - insert (append) at the end of the line
+o - append (open) a new line below the current line
+O - append (open) a new line above the current line
+ea - insert (append) at the end of the word
+Esc - exit insert mode
+
+Editing
+--------
+r - replace a single character
+J - join line below to the current one
+cc - change (replace) entire line
+cw - change (replace) to the end of the word
+c$ - change (replace) to the end of the line
+s - delete character and substitute text
+S - delete line and substitute text (same as cc)
+xp - transpose two letters (delete and paste)
+u - undo
+^r - redo
+. - repeat last command
+>> - indent line
+<< - outdent line
+
+Cut and paste
+--------------
+yy - yank (copy) a line
+2yy - yank (copy) 2 lines
+yw - yank (copy) the characters of the word from the cursor position to the start of the next word
+y$ - yank (copy) to the end of line
+p - put (paste) the clipboard after cursor
+P - put (paste) before cursor
+dd - delete (cut) a line
+2dd - delete (cut) 2 lines
+dw - delete (cut) the characters of the word from the cursor position to the start of the next word
+D - delete (cut) to the end of the line
+d$ - delete (cut) to the end of the line
+x - delete (cut) character
+
+Exiting
+--------
+:w - write (save) the file, but don't exit
+:w !sudo tee % - write out the current file using sudo
+:wq - write (save) and quit
+:x - same as :wq
+ZZ - same as :wq
+:q - quit (fails if there are unsaved changes)
+:q! - quit and throw away unsaved changes
+ZQ - same as :q!
+
+Marking text (visual mode)
+---------------------------
+v - start visual mode, mark lines, then do a command (like y-yank)
+V - start linewise visual mode
+o - move to other end of a marked area
+^v - start visual block mode
+O - move to other corner of block
+aw - mark a word
+ab - a block with ()
+aB - a block with {}
+ib - inner block with ()
+iB - inner block with {}
+Esc - exit visual mode
+
+Visual commands
+----------------
+> - shift text right
+< - shift text left
+y - yank (copy) marked text
+d - delete marked text
+~ - switch case
+
+Search and replace
+-------------------
+/pattern - search for pattern
+?pattern - search backwards for pattern
+\vpattern - 'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
+n - repeat search in same direction
+N - repeat search in opposite direction
+:%s/old/new/g - replace all old with new throughout file
+:%s/old/new/gc - replace all old with new throughout file with confirmations
+:noh remove highlighting of search matches
+* - searches for the word you are currently on and takes you to the next occurrence
+£ - same as * but reverse
+
+Search in multiple files
+-------------------------
+:vimgrep /pattern/ {file} - search for pattern in multiple files
+eg. :vimgrep /foo/ **/*
+:cn - jump to the next match
+:cp - jump to the previous match
+:copen - open a window containing the list of matches
+
+Working with multiple files
+----------------------------
+:e file - edit a file in a new buffer
+:bn - go to the next buffer
+:bnext - same as :bn
+:bp - go to the previous buffer
+:bprev - same as :bp
+:bd - delete a buffer (close a file)
+:ls - list all open buffers
+:sp file - open a file in a new buffer and split window
+:vsp file - open a file in a new buffer and vertically split window
+^ws - split window
+^ww - switch windows
+^wq - quit a window
+^wv - split window vertically
+^wh - move cursor to the left window (vertical split)
+^wj - move cursor to the window below (horizontal split)
+^wk - move cursor to the window above (horicontal split)
+^wl - move cursor to the right window (vertical split)
+
+Tabs
+-----
+:tabnew - open a file in a new tab
+:tabnew file - open a file in a new tab
+^wT - move the current split window into its own tab
+gt - move to next tab
+:tabnext - same as gt
+:tabn - same as gt
+gT - move to the previous tab
+:tabprev - same as gT
+:tabp - same as gT
+#gt - move to tab number #
+:tabmove # - move current tab to the #th position (indexed from 0)
+:tabclose - close the current tab and all its windows
+:tabc - same as :tabclose
+:tabonly - close all tabs except for the current one
+:tabo - same as :tabonly
+:tabdo command - run the command on all tabs
+eg. :tabdo q - closes all opened tabs)
+
+Registers
+----------
+:reg - show registers content
+"xy - yank into register x
+"xp - paste contents of register x
+
+Good to know: Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.
+Register O always contains the value of the last yank command
+
+Marks
+------
+:marks - list of marks
+ma - set current position for mark A
+`a - jump to position of mark A
+y`a - yank text to position of mark A
+
+Macros
+-------
+qa - record macro a
+q - stop recording macro
+@a - run macro a
+@@ - rerun last run macro
+
+Tips and tricks
+----------------
+White space problems? Have you copied a file from a site and there is a lot of spaces after every line? Do a macro!
+qag_ld$q
+qa, will record macro a, g_ will take you to the end of the last word at the line you have your cursor positioned, l will move the cursor right one character, d$ will delete everything from cursor position to end of line.
+
+Want to add a # in the beginning of specific lines or the whole document?
+:207,211s!^!#!
+:207,211s means line 207 to 211, the ! could be changed to other hyphen delimited characters such as , . - /, we then use ^ to specify beginning of the line and # because that is what we want.
+
+Other things which are good to have is these settings:
+:set number - this will show you the line numbers
+:set relativenumber - this will show you the line number you are on and the relative numbers from your cursor position which is handy for yanking or deleting multiple lines.
+You can always remove those options by addind no to the commands like :set nonumber
+:syntax on is also a good one if you are editing code.
+When opening a file from a Microsoft system run :e ++ff=dos file
+That will remove the ^M characters
+remove everything before character:
+sldgkhslgkhasgHELLO
+qwertyHELLO
+:s%/.*HELLO/HELLO/
+this is the greedy option and will eat everything until is finds the last HHELLO on the line
+non-greedy option looks like this:
+:%s/.\{-}HELLO/HELLO
