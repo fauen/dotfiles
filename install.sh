@@ -64,3 +64,5 @@ vim +PluginInstall +qall
 
 # Cleaning
 sudo apt autoremove
+\n
+echo "Make sure to clone your other repos!"
