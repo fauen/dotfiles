@@ -56,4 +56,4 @@ github project, have to add ppa on Ubuntu to get it to work
 
 neofetch
 tty-clock
-
+rtv

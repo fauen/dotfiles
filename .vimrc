@@ -13,6 +13,9 @@ Plugin 'vimwiki/vimwiki'
 " Load gruvbox colorscheme (https://github.com/morhetz/gruvbox/)
 Plugin 'morhetz/gruvbox'
 
+" Load calendar application (https://github.com/itchyny/calendar.vim)
+Plugin 'itchyny/calendar.vim'
+
 " Make sure you have all plugins before this line or it will not work
 call vundle#end()		" required
 filetype plugin indent on	" required
