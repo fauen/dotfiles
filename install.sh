@@ -15,13 +15,6 @@ sudo apt update && sudo apt upgrade -y
 # Clear the terminal after the updates are done
 clear
 
-# Check if git is installed, if not install it.
-if ! [ -x "$(command -v git)" ]; then
-	sudo apt install -y git
-else
-	echo "git already installed."
-fi
-
 # Check if tmux is installed, if not install it.
 if ! [ -x "$(command -v tmux)" ]; then
 	sudo apt install -y tmux
@@ -54,12 +47,6 @@ fi
 clear
 
 # Information that everything is installed 
-if ! [ -x "$(command -v git)" ]; then
-	printf "${red}git not installed!\n"
-else
-	printf "${green}git installed!\n"
-fi
-
 if ! [ -x "$(command -v tmux)" ]; then
 	printf "${red}tmux not installed!\n"
 else
@@ -101,7 +88,7 @@ ln -s $HOME/dotfiles/.vim-template.html $HOME/.vim/$filename
 ln -s $HOME/dotfiles/.vim-template.bash $HOME/.vim/$filename
 
 # vim command
-vim +PluginInstall +qall
+echo -ne '\n' | vim +PluginInstall +qall
 
 # Cleaning
 sudo apt autoremove -y
