@@ -19,28 +19,28 @@ clear
 if ! [ -x "$(command -v tmux)" ]; then
 	sudo apt install -y tmux
 else
-	echo "tmux already installed."
+	printf "${green}tmux already installed.\n"
 fi
 
 # Check if weechat is installed, if not install it.
 if ! [ -x "$(command -v weechat)" ]; then
 	sudo apt install -y weechat
 else
-	echo "weechat already installed."
+	printf "${green}weechat already installed.\n"
 fi
 
 # Check if vim is installed, if not install it.
 if ! [ -x "$(command -v vim)" ]; then
 	sudo apt install -y vim
 else
-	echo "vim already installed."
+	printf "${green}vim already installed.\n"
 fi
 
 # Check if ssh is installed, if not install it.
 if ! [ -x "$(command -v ssh)" ]; then
 	sudo apt install -y openssh-server
 else
-	echo "openssh-server already installed."
+	printf "${green}openssh-server already installed.\n"
 fi
 
 # Clear the terminal after everything is installed
