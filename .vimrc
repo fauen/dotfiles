@@ -50,6 +50,12 @@ filetype plugin indent on	" required
 " Set incremental search highlight on
 :set incsearch
 
+" Disable Background Color Erase (BCE) so that color schemes
+" work properly when Vim is used inside tmux and GNU screen.
+if &term =~ '256color'
+	set t_ut=
+endif
+
 " This is commands that will open up templates
 " Just press for example ,html and it will read the template.html file
 " and input the information within to your currect cursor position
