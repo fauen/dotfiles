@@ -77,3 +77,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Testing to see if Google Calendar would work
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
