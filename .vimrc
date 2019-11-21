@@ -16,6 +16,9 @@ Plugin 'morhetz/gruvbox'
 " Load calendar application (https://github.com/itchyny/calendar.vim)
 Plugin 'itchyny/calendar.vim'
 
+" Load nerdtree (https://github.com/scrooloose/nerdtree)
+Plugin 'scrooloose/nerdtree'
+
 " Make sure you have all plugins before this line or it will not work
 call vundle#end()		" required
 filetype plugin indent on	" required
@@ -77,6 +80,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Rebind key for NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 " Testing to see if Google Calendar would work
 let g:calendar_google_calendar = 1
