@@ -1,5 +1,22 @@
 Vim Cheat Sheet
 
+* Global
+* Cursor movement
+* Insert mode
+* Editing
+* Cut and paste
+* Exiting
+* Marking text
+* Visual commands
+* Search and replace
+* Search in multiple files
+* Working with multiple files
+* Tabs
+* Registers
+* Marks
+* Macros
+* Tips and tricks
+
 Global
 -------
 :help keyword - open help for keyword
