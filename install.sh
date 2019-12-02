@@ -72,7 +72,7 @@ else
 fi
 
 # Create some directories
-mkdir $HOME/.newsbeuter
+mkdir $HOME/.config/newsboat
 mkdir $HOME/.ssh
 mkdir $HOME/.tmux
 mkdir $HOME/.vim
@@ -83,7 +83,8 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Link some of the files
-ln -s $HOME/dotfiles/urls $HOME/.newsbeuter/$filename
+ln -s $HOME/dotfiles/newsboat-config $HOME/.config/newsboat/config
+ln -s $HOME/dotfiles/newsboat-urls $HOME/.config/newsboat/urls
 ln -s $HOME/dotfiles/.tmux.conf $HOME/$filename
 ln -s $HOME/dotfiles/.vimrc $HOME/$filename
 ln -s $HOME/dotfiles/.vim-template.html $HOME/.vim/$filename
