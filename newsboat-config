@@ -9,9 +9,9 @@ bind-key K prev article
 
 color background green default
 color listnormal green default 
-color listfocus green white standout
+color listfocus green black standout
 color info green default standout
-color listfocus_unread green white    standout
+color listfocus_unread green white standout
 color listnormal_unread white default
 
 feed-sort-order name
