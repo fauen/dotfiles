@@ -1,4 +1,6 @@
-filetype off                  " required
+set path+=**
+set wildmenu
+filetype plugin on                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -45,7 +47,7 @@ filetype plugin indent on	" required
 :set splitright
 
 " Set syntax highlighting on
-:syntax on
+:syntax enable
 
 " Set search highlighting on
 " :set hlsearch
@@ -65,9 +67,10 @@ endif
 nnoremap ,html :-1read $HOME/.vim/.vim-template.html<CR>2j7la
 nnoremap ,bash :-1read $HOME/.vim/.vim-template.bash<CR>3ji
 nnoremap ,date :pu=strftime('%Y-%m-%d')<CR>
-nnoremap ,wiki \ww
+" nnoremap ,wiki \ww
 nnoremap ,gen :VimwikiDiaryGenerateLinks<CR>
 nnoremap ,git :!git add . && git commit -m "update through vim" && git push<CR>
+nnoremap ,cal :Calendar<CR>
 
 " Do it right
 nnoremap <Left> :echoe "Use h"<CR>
@@ -82,7 +85,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Rebind key for NERDTree
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Testing to see if Google Calendar would work
 let g:calendar_google_calendar = 1
