@@ -30,30 +30,29 @@ filetype plugin indent on	" required
 " :let $LANG = 'en_US'
 
 " Set default color in the vim editor
-:colorscheme gruvbox
-:set background=dark
+colorscheme gruvbox
+set background=dark
 
 " This is needed for the vimwiki package
-:set nocompatible
-:filetype plugin on
+set nocompatible
 
 " Set line numbers visible by default
-:set number
+set number
 
 " This will make it visual when you hit keys like <leader> (\) like in emacs
-:set showcmd
+set showcmd
 
 " Set default
-:set splitright
+set splitright
 
 " Set syntax highlighting on
-:syntax enable
+syntax enable
 
 " Set search highlighting on
-" :set hlsearch
+set hlsearch
 
 " Set incremental search highlight on
-:set incsearch
+set incsearch
 
 " Disable Background Color Erase (BCE) so that color schemes
 " work properly when Vim is used inside tmux and GNU screen.
@@ -67,7 +66,6 @@ endif
 nnoremap ,html :-1read $HOME/.vim/.vim-template.html<CR>2j7la
 nnoremap ,bash :-1read $HOME/.vim/.vim-template.bash<CR>3ji
 nnoremap ,date :pu=strftime('%Y-%m-%d')<CR>
-" nnoremap ,wiki \ww
 nnoremap ,gen :VimwikiDiaryGenerateLinks<CR>
 nnoremap ,git :!git add . && git commit -m "update through vim" && git push<CR>
 nnoremap ,cal :Calendar<CR>
