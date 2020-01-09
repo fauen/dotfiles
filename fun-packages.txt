@@ -57,3 +57,10 @@ github project, have to add ppa on Ubuntu to get it to work
 neofetch
 tty-clock
 rtv
+nudoku
+ninvaders
+bastet (tetris)
+nsnake
+bsdgames
+git clone https://github.com/unknownblueguy6/MineSweeper.git (RTFM)
+git clone https://github.com/tiehuis/2048-cli.git (RTFM)
