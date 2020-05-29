@@ -89,6 +89,8 @@ ln -s $HOME/dotfiles/.tmux.conf $HOME/$filename
 ln -s $HOME/dotfiles/.vimrc $HOME/$filename
 ln -s $HOME/dotfiles/.vim-template.html $HOME/.vim/$filename
 ln -s $HOME/dotfiles/.vim-template.bash $HOME/.vim/$filename
+rm $HOME/.bashrc
+ln -s $HOME/dotfiles/.bashrc $HOME/$filename
 
 # vim command
 echo -ne '\n' | vim +PluginInstall +qall
