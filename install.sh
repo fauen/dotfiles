@@ -73,6 +73,7 @@ fi
 
 # Create some directories
 mkdir $HOME/.config/newsboat
+mkdir $HOME/.config/vifm
 mkdir $HOME/.ssh
 mkdir $HOME/.tmux
 mkdir $HOME/.vim
@@ -81,12 +82,14 @@ mkdir $HOME/.weechat
 # Clone some repos
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/vifm/vifm-colors ~/.config/vifm/colors
 
 # Link some of the files
 ln -s $HOME/dotfiles/newsboat-config $HOME/.config/newsboat/config
 ln -s $HOME/dotfiles/newsboat-urls $HOME/.config/newsboat/urls
 ln -s $HOME/dotfiles/.tmux.conf $HOME/$filename
 ln -s $HOME/dotfiles/.vimrc $HOME/$filename
+ln -s $HOME/dotfiles/vifmrc $HOME/.config/vifm/$filename
 ln -s $HOME/dotfiles/.vim-template.html $HOME/.vim/$filename
 ln -s $HOME/dotfiles/.vim-template.bash $HOME/.vim/$filename
 rm $HOME/.bashrc

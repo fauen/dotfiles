@@ -21,6 +21,12 @@ Plugin 'itchyny/calendar.vim'
 " Load nerdtree (https://github.com/scrooloose/nerdtree)
 Plugin 'scrooloose/nerdtree'
 
+" Load lightline (https://github.com/itchyny/lightline.vim)
+Plugin 'itchyny/lightline.vim'
+
+" Load vifm (https://github.com/vifm/vifm.vim)
+Plugin 'vifm/vifm.vim'
+
 " Make sure you have all plugins before this line or it will not work
 call vundle#end()		" required
 filetype plugin indent on	" required
@@ -88,3 +94,8 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 " Testing to see if Google Calendar would work
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
+
+" Making sure lightline is working and removing the built-it notice of Inser
+" for example
+set laststatus=2
+set noshowmode
