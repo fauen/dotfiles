@@ -73,6 +73,7 @@ nnoremap ,html :-1read $HOME/.vim/.vim-template.html<CR>2j7la
 nnoremap ,bash :-1read $HOME/.vim/.vim-template.bash<CR>3ji
 nnoremap ,date :pu=strftime('%Y-%m-%d')<CR>
 nnoremap ,gen :VimwikiDiaryGenerateLinks<CR>
+nnoremap ,vhtml :VimwikiAll2HTML<CR>
 nnoremap ,git :!git add . && git commit -m "update through vim" && git push<CR>
 nnoremap ,cal :Calendar<CR>
 
