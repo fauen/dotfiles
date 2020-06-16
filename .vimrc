@@ -27,6 +27,9 @@ Plugin 'itchyny/lightline.vim'
 " Load vifm (https://github.com/vifm/vifm.vim)
 Plugin 'vifm/vifm.vim'
 
+" Load vim-css-color (https://github.com/ap/vim-css-color)
+Plugin 'ap/vim-css-color'
+
 " Make sure you have all plugins before this line or it will not work
 call vundle#end()		" required
 filetype plugin indent on	" required
@@ -91,10 +94,6 @@ nnoremap <C-l> <C-w>l
 
 " Rebind key for NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
-
-" Testing to see if Google Calendar would work
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
 
 " Making sure lightline is working and removing the built-it notice of Inser
 " for example
