@@ -16,7 +16,7 @@ alias grep='grep --color=auto'
 alias gs='git status'
 alias gp='git pull'
 alias gitter='git add . && git commit -m "updates" && git push'
-alias gits='git add . && echo -n "Commit text: "; read commit; git commit -m "${commit]" && git push'
+alias gits='git add . && git commit && git push'
 
 # Exports
 export EDITOR=vim
