@@ -23,7 +23,7 @@ else
 fi
 
 # Check if weechat is installed, if not install it.
-if ! [ -x "$(command -v weechat)" ]; then
+if ! [ -x "$(command -v tldr)" ]; then
 	sudo apt install -y weechat
 else
 	printf "${green}weechat already installed.\n"
@@ -53,7 +53,7 @@ else
 	printf "${green}tmux installed!\n"
 fi
 
-if ! [ -x "$(command -v weechat)" ]; then
+if ! [ -x "$(command -v tldr)" ]; then
 	printf "${red}weechat not installed!\n"
 else
 	printf "${green}weechat installed!\n"
