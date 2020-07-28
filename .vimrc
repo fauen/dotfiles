@@ -79,6 +79,7 @@ nnoremap ,gen :VimwikiDiaryGenerateLinks<CR>
 nnoremap ,vhtml :VimwikiAll2HTML<CR>
 nnoremap ,git :!git add . && git commit -m "update through vim" && git push<CR>
 nnoremap ,cal :Calendar<CR>
+nnoremap ,term :terminal ++curwin<CR>
 
 " Do it right
 nnoremap <Left> :echoe "Use h"<CR>
