@@ -22,11 +22,11 @@ else
 	printf "${green}tmux already installed.\n"
 fi
 
-# Check if weechat is installed, if not install it.
+# Check if tldr is installed, if not install it.
 if ! [ -x "$(command -v tldr)" ]; then
-	sudo apt install -y weechat
+	sudo apt install -y tldr
 else
-	printf "${green}weechat already installed.\n"
+	printf "${green}tldr already installed.\n"
 fi
 
 # Check if vim is installed, if not install it.
@@ -54,9 +54,9 @@ else
 fi
 
 if ! [ -x "$(command -v tldr)" ]; then
-	printf "${red}weechat not installed!\n"
+	printf "${red}tldr not installed!\n"
 else
-	printf "${green}weechat installed!\n"
+	printf "${green}tldr installed!\n"
 fi
 
 if ! [ -x "$(command -v vim)" ]; then
@@ -77,7 +77,6 @@ mkdir $HOME/.config/vifm
 mkdir $HOME/.ssh
 mkdir $HOME/.tmux
 mkdir $HOME/.vim
-mkdir $HOME/.weechat
 
 # Clone some repos
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
