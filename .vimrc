@@ -93,6 +93,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+nnoremap <C-w><C-l> :tabnext<CR>
+nnoremap <C-w><C-h> :tabprevious<CR>
+nnoremap <C-w>c :tabnew<CR>
 nnoremap <C-w>- :split<CR>
 nnoremap <C-w>_ :vertical split<CR>
 
