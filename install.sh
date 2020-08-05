@@ -82,4 +82,4 @@ else
 	echo "dircolors is not installed. "
 fi
 	
-printf "${red}Make sure to clone your other repos.\n"
+echo -ne "\nMake sure to clone your other repos.\n"
