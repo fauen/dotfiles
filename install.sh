@@ -1,9 +1,5 @@
 # #!/bin/bash
 
-red='\033[0;31m'
-green='\033[0;32m'
-nc='\033[0m'
-
 # These are the packages that I want to have when I setup a new machine.
 # Many of them are stupid but you need stupid in the terminal!
 
@@ -19,56 +15,35 @@ clear
 if ! [ -x "$(command -v tmux)" ]; then
 	sudo apt install -y tmux
 else
-	printf "${green}tmux already installed.\n"
+	printf "tmux already installed.\n"
 fi
 
 # Check if tldr is installed, if not install it.
 if ! [ -x "$(command -v tldr)" ]; then
 	sudo apt install -y tldr
 else
-	printf "${green}tldr already installed.\n"
+	printf "tldr already installed.\n"
 fi
 
 # Check if vim is installed, if not install it.
 if ! [ -x "$(command -v vim)" ]; then
 	sudo apt install -y vim
 else
-	printf "${green}vim already installed.\n"
+	printf "vim already installed.\n"
 fi
 
 # Check if ssh is installed, if not install it.
 if ! [ -x "$(command -v ssh)" ]; then
 	sudo apt install -y openssh-server
 else
-	printf "${green}openssh-server already installed.\n"
+	printf "openssh-server already installed.\n"
 fi
 
-# Clear the terminal after everything is installed
-clear
-
-# Information that everything is installed 
-if ! [ -x "$(command -v tmux)" ]; then
-	printf "${red}tmux not installed!\n"
+# Check if dircolors is installed, if not install it.
+if ! [ -x "$(command -v dircolors)" ]; then
+	sudo apt install -y dircolors
 else
-	printf "${green}tmux installed!\n"
-fi
-
-if ! [ -x "$(command -v tldr)" ]; then
-	printf "${red}tldr not installed!\n"
-else
-	printf "${green}tldr installed!\n"
-fi
-
-if ! [ -x "$(command -v vim)" ]; then
-	printf "${red}vim not installed!\n"
-else
-	printf "${green}vim installed!\n"
-fi
-
-if ! [ -x "$(command -v ssh)" ]; then
-	printf "${red}ssh not installed!\n"
-else
-	printf "${green}ssh installed!${nc}\n"
+	printf "dircolors already installed.\n"
 fi
 
 # Create some directories
@@ -100,4 +75,11 @@ echo -ne '\n' | vim +PluginInstall +qall
 # Cleaning
 sudo apt autoremove -y
 
+if [ -x "$(command -v dircolors)" ];then
+	dircolors -p > $HOME/.dircolors
+	sed -i 's/DIR 01;34/DIR 01;33/' .dircolors
+else
+	echo "dircolors is not installed. "
+fi
+	
 printf "${red}Make sure to clone your other repos.\n"
