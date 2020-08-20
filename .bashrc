@@ -13,8 +13,7 @@ alias l='ls -CF'
 alias grep='grep --color=always'
 alias myip='curl ipv4.icanhazip.com'
 alias hackmainframe='echo "[32m"; hd /dev/urandom'
-alias weather='curl wttr.in/?m'
-# alias wetter='if [ -z $1 ]; then echo "nothing to see here"; else echo $1; fi'
+alias weather=wttr
 
 # Aliases for GitHub
 alias gs='git status'
@@ -58,3 +57,14 @@ if [[ $(uname -r) == *"microsoft"* ]]; then
 	export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
 	export LIBGL_ALWAYS_INDIRECT=1
 fi
+
+# Functions
+wttr()
+{
+	if [ -z $1 ]
+	then
+		curl wttr.in/?m
+	else
+		curl wttr.in/$1?m
+	fi
+}
