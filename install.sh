@@ -77,7 +77,7 @@ sudo apt autoremove -y
 
 if [ -x "$(command -v dircolors)" ];then
 	dircolors -p > $HOME/.dircolors
-	sed -i 's/DIR 01;34/DIR 01;33/' .dircolors
+	sed -i 's/DIR 01;34/DIR 01;33/' $HOME/.dircolors
 else
 	echo "dircolors is not installed. "
 fi
