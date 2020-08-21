@@ -18,8 +18,8 @@ alias weather=wttr
 # Aliases for GitHub
 alias gs='git status'
 alias gp='git pull'
-alias gitter='git add . && git commit -m "updates" && git push'
-alias gits='git add . && git commit && git push'
+alias gitter='git add .; git commit -m "updates"; git push'
+alias gits='git add .; git commit; git push'
 
 # Aliases for updates
 alias windows-update='sudo apt update; sudo apt upgrade -y; sudo apt autoremove'
