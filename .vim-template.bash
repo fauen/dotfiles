@@ -1,3 +1,4 @@
 #!/bin/bash
-# Author Daniel Bäckman
+# Author Daniel "fauen" Bäckman
+# https://github.com/fauen
 
