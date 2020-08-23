@@ -12,14 +12,6 @@ packages() {
 	sudo apt install dircolors 2>/dev/null
 }
 
-directories() {
-	mkdir $HOME/.config/newsboat
-	mkdir $HOME/.config/vifm
-	mkdir $HOME/.ssh
-	mkdir $HOME/.tmux
-	mkdir $HOME/.vim
-}
-
 clone() {
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -27,6 +19,11 @@ clone() {
 }
 
 link() {
+	mkdir $HOME/.config/newsboat
+	mkdir $HOME/.config/vifm
+	mkdir $HOME/.ssh
+	mkdir $HOME/.tmux
+	mkdir $HOME/.vim
 	ln -s $HOME/dotfiles/newsboat-config $HOME/.config/newsboat/config
 	ln -s $HOME/dotfiles/newsboat-urls $HOME/.config/newsboat/urls
 	ln -s $HOME/dotfiles/.tmux.conf $HOME/$filename
@@ -49,11 +46,11 @@ update() {
 }
 
 dircolors() {
-	if [ -x $(command -v dircolors) ];then
-		dircolors -p > $HOME/.dircolors
+	if [ -e /usr/bin/dircolors ]; then
+		/usr/bin/dircolors -p > $HOME/.dircolors
 		sed -i 's/DIR 01;34/DIR 01;33/' $HOME/.dircolors
-#	else
-#		echo "dircolors is not installed. "
+	else
+		echo "Something broke"
 	fi
 }
 
@@ -63,7 +60,6 @@ leave() {
 
 everything() {
 	update
-	directories
 	packages
 	clone
 	link
@@ -83,13 +79,12 @@ What would you like to do?
 Press the number of your choice:
 
 	1. Update
-	2. Create directories
-	3. Install packages
-	4. Clone repositories
-	5. Link the config files
-	6. Install vim plugins
-	7. Setup dircolors
-	8. Everything
+	2. Install packages
+	3. Clone repositories
+	4. Link the config files
+	5. Install vim plugins
+	6. Setup dircolors
+	7. Everything
 	0. Exit
 
 _EOF_
@@ -97,13 +92,12 @@ _EOF_
 read -n 1 -s choice;
 case $choice in
 	1) update;;
-	2) directories;;
-	3) packages;;
-	4) clone;;
-	5) link;;
-	6) vimplug;;
-	7) dircolors;;
-	8) everything;;
+	2) packages;;
+	3) clone;;
+	4) link;;
+	5) vimplug;;
+	6) dircolors;;
+	7) everything;;
 	0) leave;;
 	*) echo "Not a valid choice, please try again...";sleep 2;clear;begin;;
 esac
