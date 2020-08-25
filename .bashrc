@@ -62,6 +62,6 @@ wttr()
 	then
 		curl wttr.in/?m
 	else
-		curl wttr.in/$1?m
+		curl wttr.in/${1}?m
 	fi
 }
