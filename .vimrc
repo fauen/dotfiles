@@ -73,7 +73,7 @@ endif
 " Just press for example ,html and it will read the template.html file
 " and input the information within to your currect cursor position
 nnoremap ,html :-1read $HOME/.vim/.vim-template.html<CR>2j7la
-nnoremap ,bash :-1read $HOME/.vim/.vim-template.bash<CR>3ji
+nnoremap ,bash :-1read $HOME/.vim/.vim-template.bash<CR>4ji
 nnoremap ,date :pu=strftime('%Y-%m-%d')<CR>
 nnoremap ,gen :VimwikiDiaryGenerateLinks<CR>
 nnoremap ,vhtml :VimwikiAll2HTML<CR>
