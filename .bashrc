@@ -1,5 +1,18 @@
 # my personal .bashrc file
 
+# Functions
+
+# Yes I know this is not needed as a function but it looks cool
+wttr()
+{
+	if [ -z $1 ]
+	then
+		curl wttr.in/?m
+	else
+		curl wttr.in/${1}?m
+	fi
+}
+
 # History specific settings
 HISTCONTROL=ignoreboth
 HISTSIZE=10000
@@ -54,14 +67,3 @@ if [[ $(uname -r) == *"microsoft"* ]]; then
 	export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
 	export LIBGL_ALWAYS_INDIRECT=1
 fi
-
-# Functions
-wttr()
-{
-	if [ -z $1 ]
-	then
-		curl wttr.in/?m
-	else
-		curl wttr.in/${1}?m
-	fi
-}
