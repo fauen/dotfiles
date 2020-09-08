@@ -15,11 +15,11 @@ wttr()
 
 gitrs()
 {
-	if [ -n $1 ]
+	if [ -z $1 ]
 	then
-		git clone --recurse-submodules git@github.com:${USER}/${1}.git
-	else
 		echo "Input directory..."
+	else
+		git clone --recurse-submodules git@github.com:${USER}/${1}.git
 	fi
 }
 
