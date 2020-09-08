@@ -24,6 +24,9 @@ Plugin 'scrooloose/nerdtree'
 " Load lightline (https://github.com/itchyny/lightline.vim)
 Plugin 'itchyny/lightline.vim'
 
+" Load tmuxline (https://github.com/edkolev/tmuxline.vim)
+Plugin 'edkolev/tmuxline.vim'
+
 " Load vifm (https://github.com/vifm/vifm.vim)
 Plugin 'vifm/vifm.vim'
 
