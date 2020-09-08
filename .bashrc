@@ -13,16 +13,6 @@ wttr()
 	fi
 }
 
-gitrs()
-{
-	if [ -z $1 ]
-	then
-		echo "Input directory..."
-	else
-		git clone --recurse-submodules git@github.com:${USER}/${1}.git
-	fi
-}
-
 # History specific settings
 HISTCONTROL=ignoreboth
 HISTSIZE=10000
