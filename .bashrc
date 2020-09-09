@@ -27,7 +27,7 @@ alias grep="grep --color=always"
 alias myip="curl ipv4.icanhazip.com"
 alias hackmainframe="echo '[32m'; hd /dev/urandom"
 alias weather=wttr
-alias tmux="tmux new-session -s ${1}"
+alias tmuxs="tmux new-session -s ${1}"
 
 # Aliases for GitHub
 alias gs="git status"
