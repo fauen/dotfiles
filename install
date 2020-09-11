@@ -5,39 +5,57 @@
 # set -e
 
 packages() {
-	sudo apt install tmux 2>/dev/null
-	sudo apt install tldr 2>/dev/null
-	sudo apt install vim 2>/dev/null
-	sudo apt install openssh-server 2>/dev/null
-	sudo apt install dircolors 2>/dev/null
+	{
+	sudo apt install tmux 
+	sudo apt install tldr 
+	sudo apt install vim 
+	sudo apt install openssh-server 
+	sudo apt install dircolors 
+	sudo apt install newsboat 
+	} 2>/dev/null
 }
 
 clone() {
+	{
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	git clone https://github.com/vifm/vifm-colors ~/.config/vifm/colors
+	git clone https://github.com/vifm/vifm-colors ~/.config/vifm/colors 
+	} 2>/dev/null
 }
 
 link() {
-	mkdir $HOME/.config/newsboat
-	mkdir $HOME/.config/vifm
-	mkdir $HOME/.ssh
-	mkdir $HOME/.tmux
-	mkdir $HOME/.vim
-	ln -s $HOME/dotfiles/newsboat-config $HOME/.config/newsboat/config
-	ln -s $HOME/dotfiles/newsboat-urls $HOME/.config/newsboat/urls
-	ln -s $HOME/dotfiles/.tmux.conf $HOME/$filename
-	ln -s $HOME/dotfiles/.tmuxline $HOME/$filename
-	ln -s $HOME/dotfiles/.vimrc $HOME/$filename
-	ln -s $HOME/dotfiles/vifmrc $HOME/.config/vifm/$filename
-	ln -s $HOME/dotfiles/.vim-template.html $HOME/.vim/$filename
-	ln -s $HOME/dotfiles/.vim-template.bash $HOME/.vim/$filename
+	if ! [ -e $HOME/.config/newsboat ]
+	then
+		mkdir $HOME/.config/newsboat
+	elif ! [ -e $HOME/.config/vifm ]
+	then
+		mkdir $HOME/.config/vifm
+	elif ! [ -e $HOME/.ssh ]
+	then
+		mkdir $HOME/.ssh
+	elif ! [ -e $HOME/.tmux ]
+	then
+		mkdir $HOME/.tmux
+	elif ! [ -e $HOME/.vim ]
+	then
+		mkdir $HOME/.vim
+	fi
+	{
+	ln -s $HOME/dotfiles/newsboat-config $HOME/.config/newsboat/config 
+	ln -s $HOME/dotfiles/newsboat-urls $HOME/.config/newsboat/urls 
+	ln -s $HOME/dotfiles/.tmux.conf $HOME/$filename 
+	ln -s $HOME/dotfiles/.tmuxline $HOME/$filename 
+	ln -s $HOME/dotfiles/.vimrc $HOME/$filename 
+	ln -s $HOME/dotfiles/vifmrc $HOME/.config/vifm/$filename 
+	ln -s $HOME/dotfiles/.vim-template.html $HOME/.vim/$filename 
+	ln -s $HOME/dotfiles/.vim-template.bash $HOME/.vim/$filename 
 	rm $HOME/.bashrc
 	ln -s $HOME/dotfiles/.bashrc $HOME/$filename
+	} 2>/dev/null
 }
 
 vimplug() {
-	echo -ne '\n' | vim +PluginInstall +qall
+	echo -ne '\n' | vim +PluginInstall +qall 2>/dev/null
 }
 
 update() {
