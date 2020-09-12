@@ -11,7 +11,7 @@ color background green default
 color listnormal green default 
 color listfocus green black standout
 color info green default standout
-color listfocus_unread green white standout
+color listfocus_unread green black standout
 color listnormal_unread white default
 
 feed-sort-order name
