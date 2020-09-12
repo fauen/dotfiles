@@ -58,6 +58,10 @@ vimplug() {
 	echo -ne '\n' | vim +PluginInstall +qall 2>/dev/null
 }
 
+tmuxplug() {
+	./.tmux/plugins/tpm/scripts/install_plugins.sh 2>/dev/null
+}
+
 update() {
 	sudo apt update
 	sudo apt dist-upgrade -yy
@@ -83,6 +87,7 @@ everything() {
 	clone
 	link
 	vimplug
+	tmuxplug
 	dircolors
 	leave
 }
@@ -101,9 +106,10 @@ Press the number of your choice:
 	2. Install packages
 	3. Clone repositories
 	4. Link the config files
-	5. Install vim plugins
-	6. Setup dircolors
-	7. Everything
+	5. Install tmux plugins
+	6. Install vim plugins
+	7. Setup dircolors
+	8. Everything
 	0. Exit
 
 _EOF_
@@ -114,9 +120,10 @@ case $choice in
 	2) packages;;
 	3) clone;;
 	4) link;;
-	5) vimplug;;
-	6) dircolors;;
-	7) everything;;
+	5) tmuxplug;;
+	6) vimplug;;
+	7) dircolors;;
+	8) everything;;
 	0) leave;;
 	*) echo "Not a valid choice, please try again...";sleep 2;clear;begin;;
 esac
