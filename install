@@ -6,12 +6,13 @@
 
 packages() {
 	{
-	sudo apt install tmux 
-	sudo apt install tldr 
-	sudo apt install vim 
-	sudo apt install openssh-server 
-	sudo apt install dircolors 
-	sudo apt install newsboat 
+	sudo apt install -y tmux 
+	sudo apt install -y tldr 
+	sudo apt install -y vim 
+	sudo apt install -y vifm
+	sudo apt install -y openssh-server 
+	sudo apt install -y dircolors 
+	sudo apt install -y newsboat 
 	} 2>/dev/null
 }
 
