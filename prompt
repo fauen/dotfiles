@@ -1,0 +1,22 @@
+#!/usr/bin/bash
+# Author Daniel "fauen" Bäckman
+# https://github.com/fauen
+
+export PROMPT_COMMAND=prompter
+
+function prompter() {
+	local EXIT="$?"
+	PS1=""
+
+	local NOCOL='\[\033[00m\]'
+	local RED='\[\033[01;31m\]'
+	local GRE='\[\033[01;32m\]'
+	local MAG='\[\033[01;35m\]'
+	local WHI='\[\033[01;37m\]'
+	
+	if [ $EXIT != 0 ]; then
+		PS1+="${GRE}\u@\h${NOCOL}:${MAG}\w/${NOCOL}\$ ${RED}>>>${NOCOL} "
+	else
+		PS1+="${GRE}\u@\h${NOCOL}:${MAG}\w/${NOCOL}\$ ${GRE}>>>${NOCOL} "
+	fi
+}

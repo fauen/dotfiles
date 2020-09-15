@@ -1,28 +1,11 @@
 # My personal .bashrc file
 
+if [[ $- == *i* ]]; then
+	source ~/dotfiles/prompt
+fi
+
 # Functions
 
-# The prompt below is inspired by demure on github (https://github.com/demure)
-
-PROMPT_COMMAND=prompter
-
-prompter() {
-	local EXIT="$?"
-	PS1=""
-
-	local NOCOL='\[\033[00m\]'
-	local RED='\[\033[01;31m\]'
-	local GRE='\[\033[01;32m\]'
-	local MAG='\[\033[01;35m\]'
-	local WHI='\[\033[01;37m\]'
-	
-	if [ $EXIT != 0 ]; then
-		PS1+="${GRE}\u@\h${NOCOL}:${MAG}\w/${NOCOL}\$ ${RED}>>>${NOCOL} "
-	else
-		PS1+="${GRE}\u@\h${NOCOL}:${MAG}\w/${NOCOL}\$ ${GRE}>>>${NOCOL} "
-	fi
-}
-		
 wttr()
 {
 	if [ -z $1 ]; then
