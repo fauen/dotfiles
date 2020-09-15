@@ -8,11 +8,11 @@ function prompter() {
 	local EXIT="$?"
 	PS1=""
 
-	local NOCOL='\[\033[00m\]'
-	local RED='\[\033[01;31m\]'
-	local GRE='\[\033[01;32m\]'
-	local MAG='\[\033[01;35m\]'
-	local WHI='\[\033[01;37m\]'
+	local NOCOL='\[\e[00m\]'
+	local RED='\[\e[01;31m\]'
+	local GRE='\[\e[01;32m\]'
+	local MAG='\[\e[01;35m\]'
+	local WHI='\[\e[01;37m\]'
 	
 	if [ $EXIT != 0 ]; then
 		PS1+="${GRE}\u@\h${NOCOL}:${MAG}\w/${NOCOL}\$ ${RED}>>>${NOCOL} "
