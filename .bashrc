@@ -2,6 +2,8 @@
 
 if [[ $- == *i* ]]; then
 	source ~/dotfiles/prompt
+else
+	return
 fi
 
 # Functions
