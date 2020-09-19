@@ -33,6 +33,9 @@ Plugin 'vifm/vifm.vim'
 " Load vim-css-color (https://github.com/ap/vim-css-color)
 Plugin 'ap/vim-css-color'
 
+" Load vim-surround (https://github.com/tpope/vim-surround)
+Plugin 'tpope/vim-surround'
+
 " Make sure you have all plugins before this line or it will not work
 call vundle#end()		" required
 filetype plugin indent on	" required
