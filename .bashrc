@@ -1,17 +1,17 @@
 # My personal .bashrc file
 
 if [[ $- == *i* ]]; then
-	source ~/dotfiles/prompt
+	source ~/dotfiles/bash/prompt
 else
 	return
 fi
 
-if [ -e ~/dotfiles/functions ]; then
-	source ~/dotfiles/functions
+if [ -e ~/dotfiles/bash/functions ]; then
+	source ~/dotfiles/bash/functions
 fi
 
-if [ -e ~/dotfiles/aliases ]; then
-	source ~/dotfiles/aliases
+if [ -e ~/dotfiles/bash/aliases ]; then
+	source ~/dotfiles/bash/aliases
 fi
 
 # History specific settings
