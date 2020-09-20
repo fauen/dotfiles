@@ -1,0 +1,12 @@
+#!/bin/bash
+# Author Daniel "fauen" Bäckman
+# https://github.com/fauen
+
+wttr()
+{
+	if [ -z $1 ]; then
+		curl wttr.in/?m
+	else
+		curl wttr.in/${1}?m
+	fi
+}

@@ -1,0 +1,23 @@
+#!/bin/bash
+# Author Daniel "fauen" Bäckman
+# https://github.com/fauen
+
+# Aliases
+alias ls="ls --color=always"
+alias ll="ls -alF"
+alias la="ls A"
+alias l="ls -CF"
+alias grep="grep --color=always"
+alias myip="curl ipv4.icanhazip.com"
+alias hackmainframe="echo '[32m'; hd /dev/urandom"
+alias weather=wttr
+alias tmuxs="tmux new-session -s ${1}"
+
+# Aliases for GitHub
+alias gs="git status"
+alias gp="git pull"
+alias gitter="git add .; git commit -m 'updates'; git push"
+alias gits="git add .; git commit; git push"
+
+# Aliases for updates
+alias windows-update="sudo apt update; sudo apt upgrade -y; sudo apt autoremove"

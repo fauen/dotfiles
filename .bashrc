@@ -6,41 +6,18 @@ else
 	return
 fi
 
-# Functions
+if [ -e ~/dotfiles/functions ]; then
+	source ~/dotfiles/functions
+fi
 
-wttr()
-{
-	if [ -z $1 ]; then
-		curl wttr.in/?m
-	else
-		curl wttr.in/${1}?m
-	fi
-}
+if [ -e ~/dotfiles/aliases ]; then
+	source ~/dotfiles/aliases
+fi
 
 # History specific settings
 HISTCONTROL=ignoreboth
 HISTSIZE=10000
 HISTFILESIZE=20000
-
-# Aliases
-alias ls="ls --color=always"
-alias ll="ls -alF"
-alias la="ls A"
-alias l="ls -CF"
-alias grep="grep --color=always"
-alias myip="curl ipv4.icanhazip.com"
-alias hackmainframe="echo '[32m'; hd /dev/urandom"
-alias weather=wttr
-alias tmuxs="tmux new-session -s ${1}"
-
-# Aliases for GitHub
-alias gs="git status"
-alias gp="git pull"
-alias gitter="git add .; git commit -m 'updates'; git push"
-alias gits="git add .; git commit; git push"
-
-# Aliases for updates
-alias windows-update="sudo apt update; sudo apt upgrade -y; sudo apt autoremove"
 
 # Exports
 export EDITOR=vim
