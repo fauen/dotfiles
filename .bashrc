@@ -50,11 +50,6 @@ export TERM=xterm-256color
 # PS2
 PS2="$ >>> "
 
-# Colors
-if [ -x /usr/bin/dircolors ]; then
-	    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
-
 # Set bash to use vim keys
 # set -o vi
 
