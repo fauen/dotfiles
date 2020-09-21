@@ -35,6 +35,11 @@ bind 'set show-mode-in-prompt on'
 bind 'set vi-ins-mode-string I'
 bind 'set vi-cmd-mode-string N'
 
+# Colors
+if [ -x /usr/bin/dircolors ]; then
+	    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
 # Launch neofetch with bash start
 if [ -x /usr/bin/screenfetch ]; then
 	screenfetch

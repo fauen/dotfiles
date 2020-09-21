@@ -10,6 +10,7 @@ packages() {
 	sudo apt install -y tldr 
 	sudo apt install -y vim 
 	sudo apt install -y vifm
+	sudo apt install -y dircolors
 	sudo apt install -y openssh-server 
 	sudo apt install -y newsboat 
 	} 2>/dev/null
@@ -62,6 +63,10 @@ tmuxplug() {
 	./.tmux/plugins/tpm/scripts/install_plugins.sh 2>/dev/null
 }
 
+colors() {
+	dircolors -p > ~/.dircolors
+}
+
 update() {
 	sudo apt update
 	sudo apt dist-upgrade -yy
@@ -79,6 +84,7 @@ everything() {
 	link
 	vimplug
 	tmuxplug
+	colors
 	leave
 }
 
@@ -98,7 +104,8 @@ Press the number of your choice:
 	4. Link the config files
 	5. Install tmux plugins
 	6. Install vim plugins
-	7. Everything
+	7. Colors
+	8. Everything
 	0. Exit
 
 _EOF_
@@ -111,7 +118,8 @@ case $choice in
 	4) link;;
 	5) tmuxplug;;
 	6) vimplug;;
-	7) everything;;
+	7) colors;;
+	8) everything;;
 	0) leave;;
 	*) echo "Not a valid choice, please try again...";sleep 2;clear;begin;;
 esac
