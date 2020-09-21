@@ -28,7 +28,7 @@ export TERM=xterm-256color
 PS2="$ >>> "
 
 # Set bash to use vim keys
-# set -o vi
+set -o vi
 
 # Launch neofetch with bash start
 if [ -x /usr/bin/screenfetch ]; then
