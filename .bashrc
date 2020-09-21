@@ -28,7 +28,12 @@ export TERM=xterm-256color
 PS2="$ >>> "
 
 # Set bash to use vim keys
-set -o vi
+# As I have my "custom" prompt which resets the readline options I have them
+# here instead of .inputec and I'm skipping set -o vi
+bind 'set editing-mode vi'
+bind 'set show-mode-in-prompt on'
+bind 'set vi-ins-mode-string I'
+bind 'set vi-cmd-mode-string N'
 
 # Launch neofetch with bash start
 if [ -x /usr/bin/screenfetch ]; then

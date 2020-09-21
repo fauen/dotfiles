@@ -2,8 +2,6 @@
 # Author Daniel "fauen" Bäckman
 # https://github.com/fauen
 
-export PROMPT_COMMAND=prompter
-
 function prompter() {
 	local EXIT="$?"
 	PS1=""
@@ -11,12 +9,15 @@ function prompter() {
 	local NOCOL='\[\e[00m\]'
 	local RED='\[\e[01;31m\]'
 	local GRE='\[\e[01;32m\]'
+	local BLU='\[\e[01;34m\]'
 	local MAG='\[\e[01;35m\]'
 	local WHI='\[\e[01;37m\]'
 	
 	if [ $EXIT != 0 ]; then
-		PS1+="${GRE}\u@\h${NOCOL}:${MAG}\w/${NOCOL}\$ ${RED}>>>${NOCOL} "
+		PS1+=" ${GRE}\u@\h${NOCOL}:${MAG}\w/${NOCOL}\$ ${RED}>>>${NOCOL} "
 	else
-		PS1+="${GRE}\u@\h${NOCOL}:${MAG}\w/${NOCOL}\$ ${GRE}>>>${NOCOL} "
+		PS1+=" ${GRE}\u@\h${NOCOL}:${MAG}\w/${NOCOL}\$ ${GRE}>>>${NOCOL} "
 	fi
 }
+
+PROMPT_COMMAND=prompter
