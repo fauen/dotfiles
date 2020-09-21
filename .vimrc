@@ -52,7 +52,7 @@ set background=dark
 set nocompatible
 
 " Set line numbers visible by default
-set number
+set relativenumber
 
 " This will make it visual when you hit keys like <leader> (\) like in emacs
 set showcmd
@@ -68,6 +68,9 @@ set hlsearch
 
 " Set incremental search highlight on
 set incsearch
+
+" Set no swap file
+set noswapfile
 
 " Disable Background Color Erase (BCE) so that color schemes
 " work properly when Vim is used inside tmux and GNU screen.
