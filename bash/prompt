@@ -14,9 +14,9 @@ function prompter() {
 	local WHI='\[\e[01;37m\]'
 	
 	if [ $EXIT != 0 ]; then
-		PS1+=" ${GRE}\u@\h${NOCOL}:${MAG}\w/${NOCOL}\$ ${RED}>>>${NOCOL} "
+		PS1+="${GRE}\u@\h${NOCOL}:${MAG}\w/${NOCOL}\$ ${RED}>>>${NOCOL} "
 	else
-		PS1+=" ${GRE}\u@\h${NOCOL}:${MAG}\w/${NOCOL}\$ ${GRE}>>>${NOCOL} "
+		PS1+="${GRE}\u@\h${NOCOL}:${MAG}\w/${NOCOL}\$ ${GRE}>>>${NOCOL} "
 	fi
 }
 

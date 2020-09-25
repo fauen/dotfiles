@@ -30,10 +30,10 @@ PS2="$ >>> "
 # Set bash to use vim keys
 # As I have my "custom" prompt which resets the readline options I have them
 # here instead of .inputec and I'm skipping set -o vi
-bind 'set editing-mode vi'
-bind 'set show-mode-in-prompt on'
-bind 'set vi-ins-mode-string I'
-bind 'set vi-cmd-mode-string N'
+# bind 'set editing-mode vi'
+# bind 'set show-mode-in-prompt on'
+# bind 'set vi-ins-mode-string I'
+# bind 'set vi-cmd-mode-string N'
 
 # Colors
 if [ -x /usr/bin/dircolors ]; then
