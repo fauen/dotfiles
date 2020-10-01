@@ -52,6 +52,9 @@ set background=dark
 set nocompatible
 
 " Set line numbers visible by default
+set number
+
+" Set relative line numbers
 set relativenumber
 
 " This will make it visual when you hit keys like <leader> (\) like in emacs
