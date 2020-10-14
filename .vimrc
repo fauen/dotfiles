@@ -36,6 +36,9 @@ Plugin 'ap/vim-css-color'
 " Load vim-surround (https://github.com/tpope/vim-surround)
 Plugin 'tpope/vim-surround'
 
+" Loag vim-startify (https://github.com/mhinz/vim-startify)
+Plugin 'mhinz/vim-startify'
+
 " Make sure you have all plugins before this line or it will not work
 call vundle#end()		" required
 filetype plugin indent on	" required
