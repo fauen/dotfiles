@@ -123,4 +123,4 @@ set noshowmode
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " This will add a line at at column 81.
-let &colorcolumn="81"
+" let &colorcolumn="81"
