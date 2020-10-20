@@ -23,6 +23,7 @@ HISTFILESIZE=20000
 export EDITOR=vim
 export VISUAL=vim
 export TERM=xterm-256color
+export PATH="$HOME/bin:$PATH"
 
 # PS2
 PS2="$ >>> "
