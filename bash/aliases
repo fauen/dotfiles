@@ -21,3 +21,7 @@ alias gits='git add .; git commit; git push'
 
 # Aliases for updates
 alias windows-update='sudo apt update; sudo apt upgrade -y; sudo apt autoremove'
+
+# Aliases for vim
+alias vimplug="vim +PluginInstall +qall"
+alias vimwiki="vim +VimwikiIndex"
