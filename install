@@ -65,6 +65,7 @@ tmuxplug() {
 
 colors() {
 	dircolors -p > ~/.dircolors
+	sed -i 's/DIR\ 01\;34/DIR\ 01\;33/' .dircolors
 }
 
 update() {
