@@ -1,0 +1,119 @@
+wtf:
+        colors:
+                border:
+                focusable: darkslateblue
+                focused: orange
+                normal: gray
+        grid:
+                columns: [32, 32, 32, 32, 32]
+                rows: [8, 8, 8, 8, 8]
+                refreshInterval: 1
+        exitMessage:
+                display: false
+        mods:
+                digitalclock:
+                        color: orange
+                        enabled: true
+                        font: bigfont
+                        hourFormat: 24
+                        position:
+                                top: 0
+                                left: 1
+                                height: 1
+                                width: 1
+                        refreshInterval: 1
+                        title: "Time"
+                        type: "digitalclock"
+                ipinfo:
+                        colors:
+                                name: red
+                                value: white
+                        enabled: true
+                        position:
+                                top: 1
+                                left: 1
+                                height: 1
+                                width: 1
+                        refreshInterval: 150
+                textfile:
+                        enabled: yes
+                        filePaths:
+                                - "FILE"
+                        format: true
+                        formatStyle: vim
+                        position:
+                                top: 0
+                                left: 0
+                                height: 4
+                                width: 1
+                        refreshInterval: 15
+                        wrapText: true
+                        focusChar: 9
+                clocks:
+                        colors:
+                                rows:
+                                        even: "lightblue"
+                                        odd: "white"
+                        enabled: true
+                        locations:
+                                - Stockholm: "Europe/Stockholm"
+                                - Finland: "Europe/Helsinki"
+                                - Berlin: "Europe/Berlin"
+                        position:
+                                top: 0
+                                left: 2
+                                height: 1
+                                width: 1
+                        refreshInterval: 15
+                        sort: natural
+                exchangerates:
+                        enabled: true
+                        focusable: false
+                        position:
+                                top: 1
+                                left: 3
+                                height: 1
+                                width: 1
+                        precision: 3
+                        rates:
+                                SEK:
+                                        - "EUR"
+                                        - "USD"
+                                EUR:
+                                        - "SEK"
+                                USD:
+                                        - "SEK"
+                        title: "Rates"
+                git:
+                        commitCount: 5
+                        commitFormat: "[forestgreen]%h [grey]%cd [white]%s [grey]%an[white]"
+                        dateFormat: "%H:%M %d %b %y"
+                        enabled: true
+                        position:
+                                top: 2
+                                left: 1
+                                height: 2
+                                width: 2
+                        refreshInterval: 8
+                        repositories:
+                                - "REPO"
+                prettyweather:
+                        enabled: true
+                        city: "WEATHER"
+                        position:
+                                top: 0
+                                left: 3
+                                height: 1
+                                width: 1
+                        refreshInterval: 300
+                        unit: "m"
+                        view: 0
+                        language: "en"
+                security:
+                        enabled: true
+                        position:
+                                top: 1
+                                left: 2
+                                height: 1
+                                width: 1
+                        refreshInterval: 3600
