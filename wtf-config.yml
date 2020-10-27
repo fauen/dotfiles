@@ -5,8 +5,8 @@ wtf:
                 focused: orange
                 normal: gray
         grid:
-                columns: [32, 32, 32, 32, 32]
-                rows: [8, 8, 8, 8, 8]
+                columns: [32, 32, 32, 32, 32, 0]
+                rows: [8, 8, 8, 8, 8, 0]
                 refreshInterval: 1
         exitMessage:
                 display: false
