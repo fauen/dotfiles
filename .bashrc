@@ -51,4 +51,5 @@ cd
 if [[ $(uname -r) == *"microsoft"* ]]; then
 	export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
 	export LIBGL_ALWAYS_INDIRECT=1
+	export BROWSER=/mnt/c/Program/Google/Chrome/Application/chrome.exe
 fi
