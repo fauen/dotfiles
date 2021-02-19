@@ -44,6 +44,7 @@ call vundle#end()		" required
 filetype plugin indent on	" required
 
 " This section only applies if the file being edited is a yaml file
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " If you are using vim on Windows (gvim) uncomment the two options below
