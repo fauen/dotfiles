@@ -43,6 +43,9 @@ Plugin 'mhinz/vim-startify'
 call vundle#end()		" required
 filetype plugin indent on	" required
 
+" This section only applies if the file being edited is a yaml file
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 " If you are using vim on Windows (gvim) uncomment the two options below
 " :set langmenu=en_US
 " :let $LANG = 'en_US'
