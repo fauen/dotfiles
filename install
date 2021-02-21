@@ -13,6 +13,7 @@ packages() {
 	sudo apt install -y dircolors
 	sudo apt install -y openssh-server 
 	sudo apt install -y newsboat 
+	sudo apt install -y screenfetch 
 	} 2>/dev/null
 }
 
