@@ -3,7 +3,11 @@
 # https://github.com/fauen
 
 # Aliases
-alias ls='ls --color=always'
+if ! [[ $(uname -s) == *"Darwin"* ]];then
+	alias ls='ls --color=always'
+else
+	alias ls='ls -G'
+fi
 alias ll='ls -alF'
 alias la='ls A'
 alias l='ls -CF'
