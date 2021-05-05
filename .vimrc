@@ -1,6 +1,7 @@
 set path+=**
 set wildmenu
 filetype plugin on                  " required
+let mapleader = " " " map leader to Space instead of \ 
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
