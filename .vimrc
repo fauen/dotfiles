@@ -7,38 +7,17 @@ let mapleader = " " " map leader to Space instead of \
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Load vimwiki (https://github.com/vimwiki/)
-Plugin 'vimwiki/vimwiki'
-
-" Load gruvbox colorscheme (https://github.com/morhetz/gruvbox/)
-Plugin 'morhetz/gruvbox'
-
-" Load calendar application (https://github.com/itchyny/calendar.vim)
-Plugin 'itchyny/calendar.vim'
-
-" Load nerdtree (https://github.com/scrooloose/nerdtree)
-Plugin 'scrooloose/nerdtree'
-
-" Load lightline (https://github.com/itchyny/lightline.vim)
-Plugin 'itchyny/lightline.vim'
-
-" Load tmuxline (https://github.com/edkolev/tmuxline.vim)
-Plugin 'edkolev/tmuxline.vim'
-
-" Load vifm (https://github.com/vifm/vifm.vim)
-Plugin 'vifm/vifm.vim'
-
-" Load vim-css-color (https://github.com/ap/vim-css-color)
-Plugin 'ap/vim-css-color'
-
-" Load vim-surround (https://github.com/tpope/vim-surround)
-Plugin 'tpope/vim-surround'
-
-" Loag vim-startify (https://github.com/mhinz/vim-startify)
-Plugin 'mhinz/vim-startify'
+Plugin 'VundleVim/Vundle.vim'	" let Vundle manage Vundle, required
+Plugin 'vimwiki/vimwiki'	" Load vimwiki (https://github.com/vimwiki/)
+Plugin 'morhetz/gruvbox'	" Load gruvbox colorscheme (https://github.com/morhetz/gruvbox/)
+Plugin 'itchyny/calendar.vim'	" Load calendar application (https://github.com/itchyny/calendar.vim)
+Plugin 'scrooloose/nerdtree'	" Load nerdtree (https://github.com/scrooloose/nerdtree)
+Plugin 'itchyny/lightline.vim'	" Load lightline (https://github.com/itchyny/lightline.vim)
+Plugin 'edkolev/tmuxline.vim'	" Load tmuxline (https://github.com/edkolev/tmuxline.vim)
+Plugin 'vifm/vifm.vim'		" Load vifm (https://github.com/vifm/vifm.vim)
+Plugin 'ap/vim-css-color'	" Load vim-css-color (https://github.com/ap/vim-css-color)
+Plugin 'tpope/vim-surround'	" Load vim-surround (https://github.com/tpope/vim-surround)
+Plugin 'mhinz/vim-startify'	" Loag vim-startify (https://github.com/mhinz/vim-startify)
 
 " Make sure you have all plugins before this line or it will not work
 call vundle#end()		" required
@@ -56,32 +35,15 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 colorscheme gruvbox
 set background=dark
 
-" This is needed for the vimwiki package
-set nocompatible
-
-" Set line numbers visible by default
-set number
-
-" Set relative line numbers
-set relativenumber
-
-" This will make it visual when you hit keys like <leader> (\) like in emacs
-set showcmd
-
-" Set default
-set splitright
-
-" Set syntax highlighting on
-syntax enable
-
-" Set search highlighting on
-set hlsearch
-
-" Set incremental search highlight on
-set incsearch
-
-" Set no swap file
-set noswapfile
+set nocompatible	" This is needed for the vimwiki package
+set number		" Set line numbers visible by default
+set relativenumber	" Set relative line numbers
+set showcmd		" This will make it visual when you hit keys like <leader> (\) like in emacs
+set splitright		" Set default
+syntax enable		" Set syntax highlighting on
+set hlsearch		" Set search highlighting on
+set incsearch		" Set incremental search highlight on
+set noswapfile		" Set no swap file
 
 " Disable Background Color Erase (BCE) so that color schemes
 " work properly when Vim is used inside tmux and GNU screen.
