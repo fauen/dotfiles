@@ -56,10 +56,9 @@ endif
 " and input the information within to your currect cursor position
 nnoremap ,html :-1read $HOME/.vim/.vim-template.html<CR>2j7la
 nnoremap ,bash :-1read $HOME/.vim/.vim-template.bash<CR>4ji
-nnoremap ,date :pu=strftime('%Y-%m-%d')<CR>
+nnoremap ,date :-1pu=strftime('%Y-%m-%d')<CR>A<SPACE>
 nnoremap ,gen :VimwikiDiaryGenerateLinks<CR>
 nnoremap ,vhtml :VimwikiAll2HTML<CR>
-nnoremap ,git :!git add . && git commit -m "update through vim" && git push<CR>
 nnoremap ,cal :Calendar<CR>
 nnoremap ,term :terminal ++curwin<CR>
 
