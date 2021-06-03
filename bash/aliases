@@ -14,6 +14,7 @@ alias l='ls -CF'
 alias grep='grep --color=always'
 alias myip='curl ipv4.icanhazip.com'
 alias hackmainframe='echo "[32m"; hd /dev/urandom'
+alias stocks=stonks
 alias weather=wttr
 alias tmuxs="tmux new-session -s ${1}"
 
