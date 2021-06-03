@@ -16,6 +16,6 @@ stonks()
 	if [ -z $1 ]; then
 		curl https://terminal-stocks.herokuapp.com/market-summary
 	else
-		curl https://terminal-stocks.herokuapp.com/historical/${1}
+		curl https://terminal-stocks.herokuapp.com/${1}
 	fi
 }
