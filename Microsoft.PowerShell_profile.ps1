@@ -25,5 +25,8 @@ else
 }
 
 # Instead of using the default one, this will show a list.
-# You can also run Set-PSReadLineOption -PredictionSource None to not get any predictions.
+# You can also run:
+# Set-PSReadLineOption -PredictionSource None 
+# to not get any predictions.
+
 Set-PSReadLineOption -PredictionViewStyle ListView
