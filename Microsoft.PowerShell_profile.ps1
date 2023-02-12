@@ -13,6 +13,8 @@ function weather {
     } 
 }
 
+Import-Module -Name Terminal-Icons
+
 # Make sure you have a font installed like Caskydia NF or you might get an error.
 #if ( get-module -Name Terminal-Icons )
 #{
