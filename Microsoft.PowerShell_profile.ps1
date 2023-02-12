@@ -14,15 +14,15 @@ function weather {
 }
 
 # Make sure you have a font installed like Caskydia NF or you might get an error.
-if ( get-module -Name Terminal-Icons )
-{
-	import-module Terminal-Icons
-}
-else
-{
-	install-module -Name Terminal-Icons
-	import-module -Name Terminal-Icons
-}
+#if ( get-module -Name Terminal-Icons )
+#{
+#	import-module Terminal-Icons
+#}
+#else
+#{
+#	install-module -Name Terminal-Icons
+#	import-module -Name Terminal-Icons
+#}
 
 # Instead of using the default one, this will show a list.
 # You can also run:
