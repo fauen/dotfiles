@@ -10,14 +10,14 @@ else {
 
 # Load the Prompt, Functions and Aliases
 if ($PSVersionTable.Platform -eq "Unix") {
-    . $env:HOME/PowershellPrompt.ps1
-    . $env:HOME/PowershellFunctions.ps1
-    . $env:HOME/PowershellAliases.ps1
+    . $env:HOME/.config/powershell/PowershellPrompt.ps1
+    . $env:HOME/.config/powershell/PowershellFunctions.ps1
+    . $env:HOME/.config/powershell/PowershellAliases.ps1
 }
 else {
-    . $env:HOMEPATH\PowershellPrompt.ps1
-    . $env:HOMEPATH\PowershellFunctions.ps1
-    . $env:HOMEPATH\PowershellAliases.ps1
+    . $env:HOMEPATH\.config\powershell\PowershellPrompt.ps1
+    . $env:HOMEPATH\.config\powershell\PowershellFunctions.ps1
+    . $env:HOMEPATH\.config\powershell\PowershellAliases.ps1
 }
 
 # The ErrorAction here is specifically for Unix platforms.
