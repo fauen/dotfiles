@@ -1,5 +1,12 @@
 # Set the prompt
-function prompt {"$env:USERNAME`@$env:COMPUTERNAME`:$(get-location) >>> "}
+# function prompt {"$env:USERNAME`@$env:COMPUTERNAME`:$(get-location) >>> "}
+
+if ($PSVersionTable.Platform -eq "Unix") {
+    . $env:HOME/PowershellPrompt.ps1
+}
+else {
+    . $env:HOMEPATH\PowershellPrompt.ps1
+}
 
 if ($PSVersionTable.Platform -eq "Unix") {
     . $env:HOME/PowershellFunctions.ps1
@@ -16,17 +23,17 @@ else {
 }
 
 # Test function to learn how it works and how Invoke-Webrequest can get correct content like curl.
-function weather {
-    if ( $args -eq $null ) 
-    {
-        (Invoke-WebRequest "wttr.in/?m").Content
-    }
-    else
-    {
-        (Invoke-WebRequest "wttr.in/${args}?m").Content
-    } 
-}
-
+#function weather {
+#    if ( $args -eq $null ) 
+#    {
+#        (Invoke-WebRequest "wttr.in/?m").Content
+#    }
+#    else
+#    {
+#        (Invoke-WebRequest "wttr.in/${args}?m").Content
+#    } 
+#}
+#
 Import-Module -Name Terminal-Icons
 
 # Make sure you have a font installed like Caskydia NF or you might get an error.
