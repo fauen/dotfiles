@@ -1,55 +1,24 @@
-# Set the prompt
-# function prompt {"$env:USERNAME`@$env:COMPUTERNAME`:$(get-location) >>> "}
+# Import or Install modules
+if (Get-Module -ListAvailable -Name Terminal-Icons) {
+    Import-Module -Name Terminal-Icons -ErrorAction Ignore
+}
+else {
+    Set-PSRepository PSGallery -InstallationPolicy Trusted -ErrorAction Inquire
+    Install-Module Terminal-Icons -ErrorAction Ignore
+    Import-Module Terminal-Icons -ErrorAction Ignore
+}
 
+# Load the Prompt, Functions and Aliases
 if ($PSVersionTable.Platform -eq "Unix") {
     . $env:HOME/PowershellPrompt.ps1
-}
-else {
-    . $env:HOMEPATH\PowershellPrompt.ps1
-}
-
-if ($PSVersionTable.Platform -eq "Unix") {
     . $env:HOME/PowershellFunctions.ps1
-}
-else {
-    . $env:HOMEPATH\PowershellFunctions.ps1
-}
-
-if ($PSVersionTable.Platform -eq "Unix") {
     . $env:HOME/PowershellAliases.ps1
 }
 else {
+    . $env:HOMEPATH\PowershellPrompt.ps1
+    . $env:HOMEPATH\PowershellFunctions.ps1
     . $env:HOMEPATH\PowershellAliases.ps1
 }
 
-# Test function to learn how it works and how Invoke-Webrequest can get correct content like curl.
-#function weather {
-#    if ( $args -eq $null ) 
-#    {
-#        (Invoke-WebRequest "wttr.in/?m").Content
-#    }
-#    else
-#    {
-#        (Invoke-WebRequest "wttr.in/${args}?m").Content
-#    } 
-#}
-#
-Import-Module -Name Terminal-Icons
-
-# Make sure you have a font installed like Caskydia NF or you might get an error.
-#if ( get-module -Name Terminal-Icons )
-#{
-#	import-module Terminal-Icons
-#}
-#else
-#{
-#	install-module -Name Terminal-Icons
-#	import-module -Name Terminal-Icons
-#}
-
-# Instead of using the default one, this will show a list.
-# You can also run:
-# Set-PSReadLineOption -PredictionSource None 
-# to not get any predictions.
-
-Set-PSReadLineOption -PredictionViewStyle ListView
+# The ErrorAction here is specifically for Unix platforms.
+Set-PSReadLineOption -PredictionViewStyle ListView -ErrorAction SilentlyContinue
