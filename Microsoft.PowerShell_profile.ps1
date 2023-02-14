@@ -21,9 +21,6 @@ else {
 }
 
 # The ErrorAction here is specifically for Unix platforms.
-try {
+if (-not (Set-PSReadLineOption -PredictionViewStyle ListView)) {
     Set-PSReadLineOption -PredictionViewStyle ListView
-}
-catch {
-    throw
 }
