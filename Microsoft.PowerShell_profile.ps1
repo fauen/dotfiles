@@ -8,6 +8,13 @@ else {
     . $env:HOMEPATH\PowershellFunctions.ps1
 }
 
+if ($PSVersionTable.Platform -eq "Unix") {
+    . $env:HOME/PowershellAliases.ps1
+}
+else {
+    . $env:HOMEPATH\PowershellAliases.ps1
+}
+
 # Test function to learn how it works and how Invoke-Webrequest can get correct content like curl.
 function weather {
     if ( $args -eq $null ) 
