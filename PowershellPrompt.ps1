@@ -4,11 +4,11 @@ if ($PSVersionTable.Platform -eq "Unix") {
         )
         "$env:USER`@$env:NAME`:$(Get-Location) >>> "        
     }
-    else {
-        function prompt {
-            param (
-            )
-           "$env:USERNAME`@$env:COMPUTERNAME`:$(Get-Location) >>> " 
-        }
+}
+else {
+    function prompt {
+        param (
+        )
+        "$env:USERNAME`@$env:COMPUTERNAME`:$(Get-Location) >>> " 
     }
 }
