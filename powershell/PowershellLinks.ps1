@@ -19,6 +19,6 @@ else {
         Write-Verbose "Directory has been created."
     }
     else {
-        Start-Process "pwsh" -Verb RunAs -ArgumentList "-file $env:HOMEPATH\github\dotfiles\powershell\PowershellLinksWin.ps1" | Out-File "C:\temp\log.log"
+        Start-Process "pwsh" -Verb RunAs -ArgumentList "-file $env:HOMEPATH\github\dotfiles\powershell\PowershellLinksWin.ps1"
     }
 }
