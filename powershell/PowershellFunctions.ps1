@@ -49,11 +49,12 @@ function Write-GitHub {
 function Get-Weather {
     [CmdletBinding()]
     param (
+        [string[]]$Location
     )
-    if ($args -eq $null) {
+    if ($Location -eq $null) {
         (Invoke-WebRequest "wttr.in/?m").Content
     }
     else {
-        (Invoke-WebRequest "wttr.in/${args}?m").Content
+        (Invoke-WebRequest "wttr.in/${Location}?m").Content
     }
 }
