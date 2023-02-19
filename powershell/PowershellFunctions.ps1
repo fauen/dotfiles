@@ -6,7 +6,7 @@ function Receive-GitHub {
         git pull
     }
     else {
-        Write-Verbose -Message "Git is not installed"
+        Write-Warning -Message "Git is not installed"
     }
 }
 
@@ -18,7 +18,7 @@ function Read-GitHub {
         git status
     }
     else {
-        Write-Verbose -Message "Git is not installed"
+        Write-Warning -Message "Git is not installed"
     } 
 }
 
@@ -30,7 +30,7 @@ function Send-GitHub {
         git push
     }
     else {
-        Write-Verbose -Message "Git is not installed"
+        Write-Warning -Message "Git is not installed"
     } 
 }
 
@@ -42,14 +42,15 @@ function Write-GitHub {
         git add .; git commit; git push
     }
     else {
-        Write-Verbose -Message "Git is not installed"
+        Write-Warning -Message "Git is not installed"
     } 
 }
 
 function Get-Weather {
     [CmdletBinding()]
     param (
-        [string[]]$Location
+        [string]
+        $Location
     )
     if ($Location -eq $null) {
         (Invoke-WebRequest "wttr.in/?m").Content
