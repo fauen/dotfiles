@@ -1,0 +1,12 @@
+adguard
+alfred
+alt-tab
+asana
+bartender
+joplin
+megasync
+powershell
+rectangle
+spotify
+stats
+visual-studio-code
