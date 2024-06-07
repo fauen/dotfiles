@@ -44,6 +44,7 @@ syntax enable		" Set syntax highlighting on
 set hlsearch		" Set search highlighting on
 set incsearch		" Set incremental search highlight on
 set noswapfile		" Set no swap file
+set backspace=indent,eol,start
 
 " Disable Background Color Erase (BCE) so that color schemes
 " work properly when Vim is used inside tmux and GNU screen.
