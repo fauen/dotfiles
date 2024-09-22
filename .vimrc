@@ -43,8 +43,15 @@ set splitright		" Set default
 syntax enable		" Set syntax highlighting on
 set hlsearch		" Set search highlighting on
 set incsearch		" Set incremental search highlight on
-set noswapfile		" Set no swap file
+" set noswapfile		" Set no swap file
 set backspace=indent,eol,start
+
+" Setting up undo, backup and swap location of files
+" The trailing slashed means that the filename will be the full path
+" Good when you edit files with the same name so no conflict will happen
+set undodir=~/.vim/.undo//
+set backupdir=~/.vim/.backup//
+set directory=~/.vim/.swp//
 
 " Disable Background Color Erase (BCE) so that color schemes
 " work properly when Vim is used inside tmux and GNU screen.
