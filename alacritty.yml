@@ -53,7 +53,7 @@ mouse:
 cursor:
   style: Beam
 
-live_config_reload: true
+general.live_config_reload: true
 
 key_bindings:
   - { key: 2,       mods: Alt,    chars: "\x40" } 

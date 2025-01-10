@@ -1,6 +1,6 @@
-shell = "pwsh"
-working_directory = "C:\\Users\\danie"
-live_config_reload = true
+terminal.shell = "pwsh"
+general.working_directory = "C:\\Users\\danie"
+general.live_config_reload = true
 
 [window]
 padding = { x = 10, y = 10 }
