@@ -62,6 +62,10 @@ if g:env =~ 'NIX'
 	set undodir=/tmp//
 	set backupdir=/tmp/
 	set directory=/tmp//
+elseif g:env =~ 'WINDOWS'
+	set undodir=C:\TEMP\\
+	set backupdir=C:\TEMP\\
+	set directory=C:\TEMP\\
 endif
 
 
