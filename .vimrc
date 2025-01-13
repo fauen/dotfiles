@@ -49,9 +49,21 @@ set backspace=indent,eol,start
 " Setting up undo, backup and swap location of files
 " The trailing slashed means that the filename will be the full path
 " Good when you edit files with the same name so no conflict will happen
-set undodir=~/.vim/.undo//
-set backupdir=~/.vim/.backup//
-set directory=~/.vim/.swp//
+" We also check the OS so the path is correct.
+if !exists('g:env')
+    if has('win64') || has('win32') || has('win16')
+        let g:env = 'WINDOWS'
+    else
+        let g:env = 'NIX'
+    endif
+endif
+
+if g:env =~ 'NIX'
+	set undodir=/tmp//
+	set backupdir=/tmp/
+	set directory=/tmp//
+endif
+
 
 " Disable Background Color Erase (BCE) so that color schemes
 " work properly when Vim is used inside tmux and GNU screen.

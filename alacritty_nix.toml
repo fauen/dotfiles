@@ -1,5 +1,5 @@
-terminal.shell = "pwsh"
-general.working_directory = "/Users/daniel.backman"
+#terminal.shell = "pwsh"
+#general.working_directory = "/Users/daniel.backman"
 general.live_config_reload = true
 
 [window]
@@ -11,6 +11,11 @@ dynamic_title = false
 opacity = 0.8
 blur = true
 startup_mode = "Windowed"
+
+[terminal]
+[terminal.shell]
+program = "pwsh"
+#args = ["-?"]
 
 [font]
 size = 13
