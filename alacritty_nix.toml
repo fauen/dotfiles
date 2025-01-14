@@ -78,7 +78,8 @@ text = "CellBackground"
 save_to_clipboard = true
 
 [cursor]
-style = { shape = "Beam", blinking = "On" }
+style = { shape = "Block", blinking = "Always" }
+unfocused_hollow = true
 
 [mouse]
 hide_when_typing = true
