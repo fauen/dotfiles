@@ -1,27 +1,67 @@
-set path+=**
-set wildmenu
-filetype plugin on                  " required
-let mapleader = " " " map leader to Space instead of \ 
+set nocompatible				" This is needed for the vimwiki package
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
+Plug 'ap/vim-css-color'
+Plug 'edkolev/tmuxline.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'mattn/calendar-vim'
+Plug 'morhetz/gruvbox'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/vim-lsp-settings'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+call plug#end()
 
-Plugin 'VundleVim/Vundle.vim'	" let Vundle manage Vundle, required
-Plugin 'vimwiki/vimwiki'	" Load vimwiki (https://github.com/vimwiki/)
-Plugin 'morhetz/gruvbox'	" Load gruvbox colorscheme (https://github.com/morhetz/gruvbox/)
-Plugin 'itchyny/calendar.vim'	" Load calendar application (https://github.com/itchyny/calendar.vim)
-Plugin 'scrooloose/nerdtree'	" Load nerdtree (https://github.com/scrooloose/nerdtree)
-Plugin 'itchyny/lightline.vim'	" Load lightline (https://github.com/itchyny/lightline.vim)
-Plugin 'edkolev/tmuxline.vim'	" Load tmuxline (https://github.com/edkolev/tmuxline.vim)
-Plugin 'vifm/vifm.vim'		" Load vifm (https://github.com/vifm/vifm.vim)
-Plugin 'ap/vim-css-color'	" Load vim-css-color (https://github.com/ap/vim-css-color)
-Plugin 'tpope/vim-surround'	" Load vim-surround (https://github.com/tpope/vim-surround)
-Plugin 'mhinz/vim-startify'	" Loag vim-startify (https://github.com/mhinz/vim-startify)
+" syntax on					" Handled by vim-plug
+" filetype indent on				" Handled by vim-plug
+" filetype plugin indent on			" Handled by vim-plug
 
-" Make sure you have all plugins before this line or it will not work
-call vundle#end()		" required
-filetype plugin indent on	" required
+" These clips helped me with LSP in vim
+" https://www.youtube.com/watch?v=-aIPEOxUCUY
+" https://www.youtube.com/watch?v=-aIPEOxUCUY
+" Make sure to install npm and rust as well
+" Plugin 'github/copilot'			" Load copilot (https://github.com/github/copilot)
+
+let g:lsp_diagnostics_enabled = 0         " disable diagnostics support
+if executable('pylsp')
+    " pip install python-lsp-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pylsp',
+        \ 'cmd': {server_info->['pylsp']},
+        \ 'allowlist': ['python'],
+        \ })
+endif
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    "nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    "nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    "nmap <buffer> gi <plug>(lsp-implementation)
+    "nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    "nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    "nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    "nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    "nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+
+    let g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+
+    " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 
 " This section only applies if the file being edited is a yaml file
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
@@ -33,18 +73,38 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Set default color in the vim editor
 colorscheme gruvbox
-set background=dark
 
-set nocompatible	" This is needed for the vimwiki package
-set number		" Set line numbers visible by default
-set relativenumber	" Set relative line numbers
-set showcmd		" This will make it visual when you hit keys like <leader> (\) like in emacs
-set splitright		" Set default
-syntax enable		" Set syntax highlighting on
-set hlsearch		" Set search highlighting on
-set incsearch		" Set incremental search highlight on
-" set noswapfile		" Set no swap file
+" set number		" Set line numbers visible by default
+" set relativenumber	" Set relative line numbers
+" set showcmd		" This will make it visual when you hit keys like <leader> (\) like in emacs
+" set splitright		" Set default
+" syntax on		" Set syntax highlighting on
+" set hlsearch		" Set search highlighting on
+" set incsearch		" Set incremental search highlight on
+" set backspace=indent,eol,start
+" set laststatus=2
+" set noshowmode
+
+set autoindent
+set background=dark
 set backspace=indent,eol,start
+set cursorline
+set encoding=utf-8
+set hlsearch					" Set search highlighting on
+set incsearch					" Set incremental search highlight on
+set laststatus=2
+set noshowmode
+set number					" Set line numbers visible by default
+set path+=**
+set relativenumber				" Set relative line numbers
+set scrolloff=1
+set showcmd					" This will make it visual when you hit keys like <leader> (\) like in emacs
+set showmatch
+set smartindent
+set splitright					" Set default
+set wildmenu
+
+let mapleader = " "				" map leader to Space instead of \ 
 
 " Setting up undo, backup and swap location of files
 " The trailing slashed means that the filename will be the full path
@@ -62,12 +122,7 @@ if g:env =~ 'NIX'
 	set undodir=/tmp//
 	set backupdir=/tmp/
 	set directory=/tmp//
-elseif g:env =~ 'WINDOWS'
-	set undodir=C:\TEMP\\
-	set backupdir=C:\TEMP\\
-	set directory=C:\TEMP\\
 endif
-
 
 " Disable Background Color Erase (BCE) so that color schemes
 " work properly when Vim is used inside tmux and GNU screen.
@@ -75,16 +130,11 @@ if &term =~ '256color'
 	set t_ut=
 endif
 
-" This is commands that will open up templates
-" Just press for example ,html and it will read the template.html file
-" and input the information within to your currect cursor position
-nnoremap ,html :-1read $HOME/.vim/.vim-template.html<CR>2j7la
-nnoremap ,bash :-1read $HOME/.vim/.vim-template.bash<CR>4ji
+" This is commands that will open up other functionalities.
 nnoremap ,date :-1pu=strftime('%Y-%m-%d')<CR>A<SPACE>
-nnoremap ,gen :VimwikiDiaryGenerateLinks<CR>
-nnoremap ,vhtml :VimwikiAll2HTML<CR>
 nnoremap ,cal :Calendar<CR>
-nnoremap ,term :terminal ++curwin<CR>
+" nnoremap ,term :terminal ++curwin<CR>			" old map
+" nnoremap ,term :vsplit | terminal<CR>
 
 " Do it right
 nnoremap <Left> :echoe "Use h"<CR>
@@ -98,6 +148,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Rebind keys for tab movement
 nnoremap <C-w><C-l> :tabnext<CR>
 nnoremap <C-w><C-h> :tabprevious<CR>
 nnoremap <C-w>c :tabnew<CR>
@@ -107,13 +158,5 @@ nnoremap <C-w>_ :vertical split<CR>
 " Rebind key for NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
 
-" Making sure lightline is working and removing the built-it notice of Inser
-" for example
-set laststatus=2
-set noshowmode
-
-" This is specific to vimwiki and could be off if you prefer their own syntax
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
-
-" This will add a line at at column 81.
-" let &colorcolumn="81"
+" General keybinds
+nnoremap <silent> <ESC><ESC> <ESC>:nohlsearch<CR><ESC>

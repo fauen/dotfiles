@@ -20,7 +20,7 @@ packages() {
 clone() {
 	{
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	git clone https://github.com/junegunn/vim-plug ~/.vim/autoload/
 	git clone https://github.com/vifm/vifm-colors ~/.config/vifm/colors 
 	} 2>/dev/null
 }
