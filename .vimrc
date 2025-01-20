@@ -5,11 +5,11 @@ Plug 'ap/vim-css-color'
 Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/calendar-vim'
+Plug 'mattn/vim-lsp-settings'
 Plug 'morhetz/gruvbox'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/vim-lsp-settings'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 call plug#end()
@@ -152,11 +152,15 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-w><C-l> :tabnext<CR>
 nnoremap <C-w><C-h> :tabprevious<CR>
 nnoremap <C-w>c :tabnew<CR>
-nnoremap <C-w>- :split<CR>
-nnoremap <C-w>_ :vertical split<CR>
+nnoremap <leader>sh :split<CR>
+nnoremap <leader>sv :vertical split<CR>
 
 " Rebind key for NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
+
+" Other rebinds
+nnoremap <leader>w :write<CR>
+nnoremap <leader>q :quit<CR>
 
 " General keybinds
 nnoremap <silent> <ESC><ESC> <ESC>:nohlsearch<CR><ESC>
