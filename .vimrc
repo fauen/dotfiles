@@ -3,6 +3,8 @@ set nocompatible				" This is needed for the vimwiki package
 call plug#begin()
 Plug 'ap/vim-css-color'
 Plug 'edkolev/tmuxline.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/calendar-vim'
 Plug 'mattn/vim-lsp-settings'
@@ -74,21 +76,10 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " Set default color in the vim editor
 colorscheme gruvbox
 
-" set number		" Set line numbers visible by default
-" set relativenumber	" Set relative line numbers
-" set showcmd		" This will make it visual when you hit keys like <leader> (\) like in emacs
-" set splitright		" Set default
-" syntax on		" Set syntax highlighting on
-" set hlsearch		" Set search highlighting on
-" set incsearch		" Set incremental search highlight on
-" set backspace=indent,eol,start
-" set laststatus=2
-" set noshowmode
-
 set autoindent
 set background=dark
 set backspace=indent,eol,start
-set cursorline
+" set cursorline
 set encoding=utf-8
 set hlsearch					" Set search highlighting on
 set incsearch					" Set incremental search highlight on
@@ -164,3 +155,7 @@ nnoremap <leader>q :quit<CR>
 
 " General keybinds
 nnoremap <silent> <ESC><ESC> <ESC>:nohlsearch<CR><ESC>
+
+" Fuzzy finder
+let g:fzf_vim = {}
+let g:fzf_vim.preview_window = ['right,50%', 'ctrl--']
