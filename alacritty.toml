@@ -1,48 +1,39 @@
+# import = ['string',]
+# working directory = "<string>"	# Does not work with different OS
 general.live_config_reload = true
 
 [window]
+# position = "None" | { x = <integer>, y = <integer> } # (has no effect on Wayland)
 padding = { x = 10, y = 10 }
-decorations = "Full"
-#decorations = "None"
-title = "Alacritty"
-dynamic_title = false
+decorations = "Full"			# None, Full
 opacity = 0.8
 blur = true
-startup_mode = "Windowed"
-
-[terminal]
-[terminal.shell]
-program = "pwsh"
-#args = ["-WorkingDirectory $HOME"]
+startup_mode = "Windowed"		# Windowed, Maximized, Fullscreen
+title = "Alacritty"
+dynamic_title = false
+decorations_theme_variant = "None"	# None, Dark, Light
+level = "Normal"			# Normal, AlwaysOnTop
 
 [font]
+normal = { family = "Source Code Pro", style = "Regular" }
+bold = { family = "Source Code Pro", style = "Bold" }
+italic = { family = "Source Code Pro", style = "Italic" }
+bold_italic = { family = "Source Code Pro", style = "Bold Italic" }
 size = 13
-
-[font.bold]
-family = "Source Code Pro"
-style = "Bold"
-
-[font.bold_italic]
-family = "Source Code Pro"
-style = "Bold Italic"
-
-[font.italic]
-family = "Source Code Pro"
-style = "Italic"
-
-[font.normal]
-family = "Source Code Pro"
-style = "Regular"
-
-[font.offset]
-x = 0
-y = 0
 
 [colors]
 
 [colors.primary]
 background = "#282828"
 foreground = "#ebdbb2"
+
+[colors.cursor]
+cursor = "#d65d0e"
+text = "CellBackground"
+
+[colors.selection]
+text = "CellForeground"
+background = "#d65d0e"
 
 [colors.normal]
 black   = "#282828"
@@ -64,20 +55,16 @@ red     = '#fb4934'
 yellow  = '#fabd2f'
 white   = '#ebdbb2'
 
-[colors.selection]
-background = "#d65d0e"
-text = "CellForeground"
-
-[colors.cursor]
-cursor = "#d65d0e"
-text = "CellBackground"
-
 [selection]
 save_to_clipboard = true
 
 [cursor]
 style = { shape = "Block", blinking = "Always" }
 unfocused_hollow = true
+
+[terminal]
+#shell = { program = "pwsh", args = ["-WorkingDirectory $HOME",] }
+shell = { program = "pwsh", args = [] }
 
 [mouse]
 hide_when_typing = true
@@ -90,4 +77,5 @@ bindings = [
     #{ key = "V", mods = "Control", action = "Paste" },
     #{ key = "C", mods = "Control", action = "Copy" },
     { key = "Key0", mods = "Control", action = "ResetFontSize" },
+    { key = "N", mods = "Control", action = "CreateNewWindow" },
 ]
