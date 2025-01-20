@@ -1,5 +1,3 @@
-terminal.shell = "pwsh"
-general.working_directory = "C:\\Users\\danie"
 general.live_config_reload = true
 
 [window]
@@ -8,12 +6,17 @@ decorations = "Full"
 #decorations = "None"
 title = "Alacritty"
 dynamic_title = false
-opacity = 1
+opacity = 0.8
 blur = true
 startup_mode = "Windowed"
 
+[terminal]
+[terminal.shell]
+program = "pwsh"
+#args = ["-WorkingDirectory $HOME"]
+
 [font]
-size = 11
+size = 13
 
 [font.bold]
 family = "Source Code Pro"
@@ -73,7 +76,8 @@ text = "CellBackground"
 save_to_clipboard = true
 
 [cursor]
-style = { shape = "Beam", blinking = "On" }
+style = { shape = "Block", blinking = "Always" }
+unfocused_hollow = true
 
 [mouse]
 hide_when_typing = true
