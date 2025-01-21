@@ -7,11 +7,11 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/calendar-vim'
-Plug 'mattn/vim-lsp-settings'
 Plug 'morhetz/gruvbox'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/vim-lsp'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 call plug#end()
@@ -28,12 +28,12 @@ call plug#end()
 
 let g:lsp_diagnostics_enabled = 0         " disable diagnostics support
 if executable('pylsp')
-    " pip install python-lsp-server
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pylsp',
-        \ 'cmd': {server_info->['pylsp']},
-        \ 'allowlist': ['python'],
-        \ })
+     " pip install python-lsp-server
+     au User lsp_setup call lsp#register_server({
+         \ 'name': 'pylsp',
+         \ 'cmd': {server_info->['pylsp']},
+         \ 'allowlist': ['python'],
+         \ })
 endif
 
 function! s:on_lsp_buffer_enabled() abort
@@ -64,14 +64,6 @@ augroup lsp_install
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
-
-" This section only applies if the file being edited is a yaml file
-au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
-" If you are using vim on Windows (gvim) uncomment the two options below
-" :set langmenu=en_US
-" :let $LANG = 'en_US'
 
 " Set default color in the vim editor
 colorscheme gruvbox
