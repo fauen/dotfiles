@@ -14,6 +14,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
 
 " syntax on					" Handled by vim-plug
@@ -116,8 +117,6 @@ endif
 " This is commands that will open up other functionalities.
 nnoremap ,date :-1pu=strftime('%Y-%m-%d')<CR>A<SPACE>
 nnoremap ,cal :Calendar<CR>
-" nnoremap ,term :terminal ++curwin<CR>			" old map
-" nnoremap ,term :vsplit | terminal<CR>
 
 " Do it right
 nnoremap <Left> :echoe "Use h"<CR>
@@ -139,7 +138,13 @@ nnoremap <leader>sh :split<CR>
 nnoremap <leader>sv :vertical split<CR>
 
 " Rebind key for NERDTree
+let NERDTreeShowHidden=1
 nnoremap <C-n> :NERDTreeToggle<CR>
+
+" Terminal
+" nnoremap <leader>term :vsplit<CR>:terminal ++curwin<CR>
+nnoremap <leader>th :below horizontal terminal ++rows=20<CR>
+nnoremap <leader>tv :vertical terminal ++cols=80<CR>
 
 " Other rebinds
 nnoremap <leader>w :write<CR>
@@ -151,3 +156,7 @@ nnoremap <silent> <ESC><ESC> <ESC>:nohlsearch<CR><ESC>
 " Fuzzy finder
 let g:fzf_vim = {}
 let g:fzf_vim.preview_window = ['right,50%', 'ctrl--']
+nnoremap <leader>fz :FZF<CR>
+
+" Markdown
+nnoremap <C-p> :MarkdownPreviewToggle<CR>
