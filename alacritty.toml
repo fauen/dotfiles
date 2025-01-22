@@ -8,7 +8,7 @@ padding = { x = 10, y = 10 }
 decorations = "Full"			# None, Full
 opacity = 0.8
 blur = true
-startup_mode = "Windowed"		# Windowed, Maximized, Fullscreen
+startup_mode = "Maximized"		# Windowed, Maximized, Fullscreen
 title = "Alacritty"
 dynamic_title = false
 decorations_theme_variant = "None"	# None, Dark, Light

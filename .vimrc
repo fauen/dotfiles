@@ -1,10 +1,10 @@
-set nocompatible				" This is needed for the vimwiki package
+set nocompatible
 
 call plug#begin()
 Plug 'ap/vim-css-color'
 Plug 'edkolev/tmuxline.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/calendar-vim'
 Plug 'morhetz/gruvbox'
@@ -14,6 +14,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
+Plug 'Donaldttt/fuzzyy'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
 
@@ -27,7 +28,7 @@ call plug#end()
 " Make sure to install npm and rust as well
 " Plugin 'github/copilot'			" Load copilot (https://github.com/github/copilot)
 
-let g:lsp_diagnostics_enabled = 0         " disable diagnostics support
+let g:lsp_diagnostics_enabled = 0         	" disable diagnostics support
 if executable('pylsp')
      " pip install python-lsp-server
      au User lsp_setup call lsp#register_server({
@@ -72,21 +73,22 @@ colorscheme gruvbox
 set autoindent
 set background=dark
 set backspace=indent,eol,start
-" set cursorline
+set cursorline
 set encoding=utf-8
 set hlsearch					" Set search highlighting on
 set incsearch					" Set incremental search highlight on
 set laststatus=2
 set noshowmode
 set number					" Set line numbers visible by default
-set path+=**
+set path+=**					" Mighty path, recursive search
 set relativenumber				" Set relative line numbers
-set scrolloff=1
+set scrolloff=1					" Makes sure you have one line always below you
 set showcmd					" This will make it visual when you hit keys like <leader> (\) like in emacs
 set showmatch
 set smartindent
 set splitright					" Set default
 set wildmenu
+set wildoptions=pum				" wildmenu becomes vertical
 
 let mapleader = " "				" map leader to Space instead of \ 
 
@@ -154,9 +156,7 @@ nnoremap <leader>q :quit<CR>
 nnoremap <silent> <ESC><ESC> <ESC>:nohlsearch<CR><ESC>
 
 " Fuzzy finder
-let g:fzf_vim = {}
-let g:fzf_vim.preview_window = ['right,50%', 'ctrl--']
-nnoremap <leader>fz :FZF<CR>
+let g:fuzzyy_enable_mappings = 1
 
 " Markdown
 nnoremap <C-p> :MarkdownPreviewToggle<CR>
