@@ -12,7 +12,6 @@ startup_mode = "Maximized"		# Windowed, Maximized, Fullscreen
 title = "Alacritty"
 dynamic_title = false
 decorations_theme_variant = "None"	# None, Dark, Light
-level = "Normal"			# Normal, AlwaysOnTop
 
 [font]
 normal = { family = "Source Code Pro", style = "Regular" }
@@ -64,7 +63,7 @@ unfocused_hollow = true
 
 [terminal]
 #shell = { program = "pwsh", args = ["-WorkingDirectory $HOME",] }
-shell = { program = "pwsh", args = [] }
+shell = { program = "pwsh", args = ["-wd ~"] }
 
 [mouse]
 hide_when_typing = true
