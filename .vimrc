@@ -87,6 +87,7 @@ set showcmd					" This will make it visual when you hit keys like <leader> (\) l
 set showmatch
 set smartindent
 set splitright					" Set default
+set termguicolors
 set wildmenu
 set wildoptions=pum				" wildmenu becomes vertical
 
