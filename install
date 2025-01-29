@@ -43,21 +43,21 @@ link() {
 		mkdir $HOME/.vim
 	fi
 	{
-	ln -s $HOME/dotfiles/newsboat-config $HOME/.config/newsboat/config 
-	ln -s $HOME/dotfiles/newsboat-urls $HOME/.config/newsboat/urls 
-	ln -s $HOME/dotfiles/.tmux.conf $HOME/$filename 
-	ln -s $HOME/dotfiles/.tmuxline $HOME/$filename 
-	ln -s $HOME/dotfiles/.vimrc $HOME/$filename 
-	ln -s $HOME/dotfiles/vifmrc $HOME/.config/vifm/$filename 
-	ln -s $HOME/dotfiles/.vim-template.html $HOME/.vim/$filename 
-	ln -s $HOME/dotfiles/.vim-template.bash $HOME/.vim/$filename 
+	ln -s $HOME/src/dotfiles/newsboat-config $HOME/.config/newsboat/config 
+	ln -s $HOME/src/dotfiles/newsboat-urls $HOME/.config/newsboat/urls 
+	ln -s $HOME/src/dotfiles/.tmux.conf $HOME/$filename 
+	ln -s $HOME/src/dotfiles/.tmuxline $HOME/$filename 
+	ln -s $HOME/src/dotfiles/.vimrc $HOME/$filename 
+	ln -s $HOME/src/dotfiles/vifmrc $HOME/.config/vifm/$filename 
+	ln -s $HOME/src/dotfiles/.vim-template.html $HOME/.vim/$filename 
+	ln -s $HOME/src/dotfiles/.vim-template.bash $HOME/.vim/$filename 
 	rm $HOME/.bashrc
-	ln -s $HOME/dotfiles/.bashrc $HOME/$filename
+	ln -s $HOME/src/dotfiles/.bashrc $HOME/$filename
 	} 2>/dev/null
 }
 
 vimplug() {
-	echo -ne '\n' | vim +PluginInstall +qall 2>/dev/null
+	echo -ne '\n' | vim +PlugInstall +qall 2>/dev/null
 }
 
 tmuxplug() {
