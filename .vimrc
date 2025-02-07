@@ -156,6 +156,10 @@ nnoremap <leader>q :quit<CR>
 " General keybinds
 nnoremap <silent> <ESC><ESC> <ESC>:nohlsearch<CR><ESC>
 
+" Buffer things
+nnoremap <leader>dd :bd<CR>
+:au BufAdd,BufNewFile,BufRead * nested tab sball
+
 " Fuzzy finder
 let g:fuzzyy_enable_mappings = 1
 
