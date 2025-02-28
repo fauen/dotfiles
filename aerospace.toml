@@ -279,3 +279,11 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
     if.app-id = "net.cozic.joplin-desktop"
     run = "move-node-to-workspace N"
+
+[[on-window-detected]]
+    if.app-id = "com.1password.1password"
+    run = "layout floating"
+
+[[on-window-detected]]
+    if.app-id = "com.apple.FaceTime"
+    run = "layout floating"
