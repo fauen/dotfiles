@@ -1,3 +1,5 @@
+browser "open %u"
+
 bind-key j next
 bind-key k prev
 bind-key J next-feed
