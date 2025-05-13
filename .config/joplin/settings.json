@@ -1,0 +1,14 @@
+{
+	"$schema": "https://joplinapp.org/schema/settings.json",
+	"altInstanceId": "",
+	"sync.target": 5,
+	"sync.5.path": "",
+	"sync.5.username": "",
+	"locale": "en_US",
+	"notes.sortOrder.field": "title",
+	"notes.sortOrder.reverse": false,
+	"markdown.plugin.softbreaks": false,
+	"markdown.plugin.typographer": false,
+	"editor": "vim",
+	"api.token": ""
+}
