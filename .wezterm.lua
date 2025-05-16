@@ -8,7 +8,15 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- Set the shell
-config.default_prog = { 'pwsh' }
+config.default_prog = { 'nu' }
+
+-- Set environment variables
+-- Note that this has to be an absolute path for it to work with nushell.
+config.set_environment_variables = {
+	-- Note that this has to be an absolute path for it to work with nushell.
+	-- XDG_CONFIG_HOME = "~/.config"
+	EDITOR = "vim"
+}
 
 -- Color scheme
 config.color_scheme = 'GruvboxDark'

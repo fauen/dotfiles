@@ -37,7 +37,7 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-on-focus-changed = 'move-mouse window-lazy-center'
+# on-focus-changed = 'move-mouse window-lazy-center'
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -269,16 +269,20 @@ automatically-unhide-macos-hidden-apps = false
     run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
-    if.app-id = "org.alacritty"
+    if.app-id = "com.github.wez.wezterm"
     run = "move-node-to-workspace T"
 
 [[on-window-detected]]
-    if.app-id = "com.vivaldi.Vivaldi"
+    if.app-id = "org.mozilla.firefox"
     run = "move-node-to-workspace B"
 
 [[on-window-detected]]
     if.app-id = "net.cozic.joplin-desktop"
     run = "move-node-to-workspace N"
+
+[[on-window-detected]]
+    if.app-id = "com.duckduckgo.macos.browser"
+    run = "move-node-to-workspace D"
 
 [[on-window-detected]]
     if.app-id = "com.1password.1password"
