@@ -35,7 +35,7 @@ alias windows-update = sudo apt update and sudo apt upgrade -y and sudo apt auto
 alias vimplug = vim +PlugInstall +qall
 
 # Add homebrew to the path
-$env.path ++= ["/opt/homebrew/bin"]
+$env.path ++= [/opt/homebrew/bin, $env.home]
 
 # Make sure that vim is the editor for the configuration.
 $env.EDITOR = "vim"
