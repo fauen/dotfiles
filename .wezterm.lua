@@ -8,7 +8,7 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- Set the shell
-config.default_prog = { 'nu' }
+config.default_prog = { 'pwsh' }
 
 -- Set environment variables
 -- Note that this has to be an absolute path for it to work with nushell.
