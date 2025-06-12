@@ -1,0 +1,19 @@
+format = '$all'
+scan_timeout = 10
+add_newline = false
+
+[aws]
+disabled = true
+
+[battery]
+
+[[battery.display]]
+threshold = 15
+style = "red bold"
+
+[[battery.display]]
+threshold = 30
+style = "yellow bold"
+
+[time]
+disabled = true
