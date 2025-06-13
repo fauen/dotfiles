@@ -8,5 +8,6 @@ megasync
 powershell
 rectangle
 spotify
+starship
 stats
 visual-studio-code
