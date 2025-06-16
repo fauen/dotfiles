@@ -16,5 +16,8 @@ style = "red bold"
 threshold = 30
 style = "yellow bold"
 
+[lua]
+detect_folders = []
+
 [time]
 disabled = true
