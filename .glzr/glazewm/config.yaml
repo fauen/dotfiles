@@ -25,7 +25,7 @@ general:
     # Trigger for cursor jump:
     # - 'monitor_focus': Jump when focus changes between monitors.
     # - 'window_focus': Jump when focus changes between windows.
-    trigger: 'monitor_focus'
+    trigger: 'window_focus'
 
   # How windows should be hidden when switching workspaces.
   # - 'cloak': Recommended. Hides windows with no animation.
@@ -109,7 +109,7 @@ window_behavior:
       centered: true
 
       # Whether to show floating windows as always on top.
-      shown_on_top: false
+      shown_on_top: true
 
     fullscreen:
       # Maximize the window if possible. If the window doesn't have a
@@ -121,7 +121,9 @@ window_behavior:
 
 workspaces:
   - name: '1'
+    bind_to_monitor: 1
   - name: '2'
+    bind_to_monitor: 0
   - name: '3'
   - name: '4'
   - name: '5'
@@ -129,8 +131,17 @@ workspaces:
   - name: '7'
   - name: '8'
   - name: '9'
+    bind_to_monitor: 2
 
 window_rules:
+  - commands: ['move --workspace 9']
+    match:
+      - window_process: { regex: "discord" }
+
+  - commands: ['set-floating']
+    match:
+      - window_process: { regex: "Command Palette" }
+
   - commands: ['ignore']
     match:
       # Ignores any Zebar windows.
@@ -213,7 +224,7 @@ keybindings:
 
   # Change focus from tiling windows -> floating -> fullscreen.
   - commands: ['wm-cycle-focus']
-    bindings: ['alt+space']
+  #  bindings: ['alt+space']
 
   # Change the focused window to be floating.
   - commands: ['toggle-floating --centered']
