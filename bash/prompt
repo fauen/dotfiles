@@ -20,4 +20,6 @@ function prompter() {
 	fi
 }
 
-PROMPT_COMMAND=prompter
+#PROMPT_COMMAND=prompter
+
+eval "$(starship init bash)"

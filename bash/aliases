@@ -3,11 +3,15 @@
 # https://github.com/fauen
 
 # Aliases
-if ! [[ $(uname -s) == *"Darwin"* ]];then
-	alias ls='ls --color=always'
-else
-	alias ls='ls -G'
+if [[ $(uname) == "Darwin" && ! $(command -v lsd) ]]; then
+	brew install lsd
 fi
+
+if [[ $(uname) == "Linux" && ! $(command -v lsd) ]]; then
+	sudo apt install lsd
+fi
+
+alias ls='lsd'
 alias ll='ls -alF'
 alias la='ls A'
 alias l='ls -CF'

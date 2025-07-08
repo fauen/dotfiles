@@ -1,0 +1,9 @@
+# Default path
+
+export PATH="$HOME/bin:$PATH"
+
+# Mac specific
+
+if [[ $(uname) == "Darwin" ]]; then
+	export PATH="/opt/homebrew/bin:$PATH"
+fi
