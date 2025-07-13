@@ -17,7 +17,7 @@ config.font = wezterm.font 'Source Code Pro'
 config.font_size = 10
 
 -- Opacity of window
-config.window_background_opacity = 0.8
+config.window_background_opacity = 1
 
 -- Tabs
 config.hide_tab_bar_if_only_one_tab = true
