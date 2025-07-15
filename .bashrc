@@ -2,31 +2,40 @@
 
 if [ -e ~/src/dotfiles/bash/path ]; then
 	source ~/src/dotfiles/bash/path
+else
+	echo "Can't find path file."
 fi
 
 # Checks if the shell is interactive and if it is, setup the prompt.
 if [[ $- == *i* ]]; then
 	source ~/src/dotfiles/bash/prompt
 else
-	return
+	echo "Not an interactive shell, prompt can't be setup."
 fi
 
-# Both of the below checks if the files exist and if they so sources them.
+# The below checks if the files exist and if they so sources them.
 if [ -e ~/src/dotfiles/bash/functions ]; then
 	source ~/src/dotfiles/bash/functions
+else
+	echo "Can't find the functions file."
 fi
 
 if [ -e ~/src/dotfiles/bash/aliases ]; then
 	source ~/src/dotfiles/bash/aliases
+else
+	echo "Can't find the aliases file."
 fi
 
-# Exports which is hostname specific
+# Exports which is platform specific
 if [ -e ~/src/dotfiles/bash/export ]; then
 	source ~/src/dotfiles/bash/export
+else
+	echo "Can't find the export file."
 fi
 
 
 # History specific settings
+HISTTIMEFORMAT="%F %T "
 HISTCONTROL=ignoreboth
 HISTSIZE=10000
 HISTFILESIZE=20000
