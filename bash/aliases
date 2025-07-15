@@ -8,7 +8,11 @@ if [[ $(uname) == "Darwin" && ! $(command -v lsd) ]]; then
 fi
 
 if [[ $(uname) == "Linux" && ! $(command -v lsd) ]]; then
-	sudo apt install lsd
+	if [[ $(cat /proc/version) == *"ubuntu"* ]]; then
+		sudo apt install lsd
+	elif [[ $(cat /proc/version) == *"arch"* ]]; then
+		sudo pacman -S lsd
+	fi
 fi
 
 alias ls='lsd'
