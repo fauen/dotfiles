@@ -20,22 +20,16 @@ if [ -e ~/src/dotfiles/bash/aliases ]; then
 	source ~/src/dotfiles/bash/aliases
 fi
 
+# Exports which is hostname specific
+if [ -e ~/src/dotfiles/bash/export ]; then
+	source ~/src/dotfiles/bash/export
+fi
+
 
 # History specific settings
 HISTCONTROL=ignoreboth
 HISTSIZE=10000
 HISTFILESIZE=20000
-
-# Exports
-export EDITOR=vim
-export VISUAL=vim
-export TERM=xterm-256color
-#export PATH="$HOME/bin:$PATH"
-
-if [[ $(uname) == "Darwin" ]]; then
-	#export PATH="/opt/homebrew/bin:$PATH"
-	export BASH_SILENCE_DEPRECATION_WARNING=1
-fi
 
 # PS2
 PS2="$ >>> "
@@ -47,21 +41,3 @@ PS2="$ >>> "
 # bind 'set show-mode-in-prompt on'
 # bind 'set vi-ins-mode-string I'
 # bind 'set vi-cmd-mode-string N'
-
-# Colors
-#if [ -x /usr/bin/dircolors ]; then
-#	    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-#fi
-
-# Launch screenfetch (if installed) with bash start, but not really used anymore.
-#if [ -x /usr/bin/screenfetch ]; then
-#	screenfetch
-#fi
-#cd
-
-# This is only used for WSL, I'm not using Windows at all so no need to use this. Might not even work.
-#if [[ $(uname -r) == *"microsoft"* ]]; then
-#	export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
-#	export LIBGL_ALWAYS_INDIRECT=1
-#	export BROWSER=/mnt/c/Program/Google/Chrome/Application/chrome.exe
-#fi
