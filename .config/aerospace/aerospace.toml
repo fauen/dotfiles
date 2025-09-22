@@ -203,10 +203,10 @@ automatically-unhide-macos-hidden-apps = false
     # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
     #s = ['layout sticky tiling', 'mode main']
 
-    alt-shift-h = ['join-with left', 'mode main']
-    alt-shift-j = ['join-with down', 'mode main']
-    alt-shift-k = ['join-with up', 'mode main']
-    alt-shift-l = ['join-with right', 'mode main']
+    ctrl-alt-shift-h = ['join-with left', 'mode main']
+    ctrl-alt-shift-j = ['join-with down', 'mode main']
+    ctrl-alt-shift-k = ['join-with up', 'mode main']
+    ctrl-alt-shift-l = ['join-with right', 'mode main']
 
     down = 'volume down'
     up = 'volume up'
@@ -258,11 +258,11 @@ automatically-unhide-macos-hidden-apps = false
 
 [[on-window-detected]]
     if.app-id = "com.microsoft.teams2"
-    run = "move-node-to-workspace 3"
+    run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
     if.app-id = "com.electron.asana"
-    run = "move-node-to-workspace 1"
+    run = "move-node-to-workspace A"
 
 [[on-window-detected]]
     if.app-id = "com.microsoft.Outlook"
