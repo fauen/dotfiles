@@ -7,6 +7,7 @@ fi
 if [[ $(uname) == "Darwin" ]]; then
 	#export PATH="/opt/homebrew/bin:$PATH"
 	export BASH_SILENCE_DEPRECATION_WARNING=1
+	export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1
 fi
 
 
