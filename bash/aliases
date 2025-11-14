@@ -38,3 +38,7 @@ alias windows-update='sudo apt update; sudo apt upgrade -y; sudo apt autoremove'
 # Aliases for vim
 alias vimplug="vim +PlugInstall +qall"
 alias vimwiki="vim +VimwikiIndex"
+
+if [[ $(uname) == "Darwin" ]]; then
+	alias python3='/opt/homebrew/bin/python3.13'
+fi
