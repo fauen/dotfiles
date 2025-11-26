@@ -33,7 +33,7 @@
     (load custom-file)
 
     ;; Font setting
-    (set-face-attribute 'default nil :font "UbuntuMono NF" :height 150)
+    ;; (set-face-attribute 'default nil :font "UbuntuMono NF" :height 150)
 
     ;; Uncomment to see in messages what's available
     ;; (print (font-family-list))
