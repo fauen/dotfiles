@@ -52,7 +52,7 @@ $env.PROMPT_COMMAND_RIGHT = {
 
 def wttr [name?: string] {
 	if ($name | is-not-empty) {
-		http get https://wttr.in?($name)
+		http get https://wttr.in/($name)
 	} else {
 		http get https://wttr.in
 	}
