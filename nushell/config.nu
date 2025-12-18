@@ -26,7 +26,6 @@ alias la = ls -a
 ## Aliases for GitHub
 alias gs = git status
 alias gp = git pull
-alias gitter = git add . and git commit -m "updates" and git push
 
 ## Aliases for updates
 alias windows-update = sudo apt update and sudo apt upgrade -y and sudo apt autoremove
@@ -75,7 +74,16 @@ def myip [--full] {
 	}
 }
 
+def gacp [] {
+	git add .
+	git commit
+	git push
+}
+
 fastfetch
 
 # Remove the banner
 $env.config.show_banner = false
+
+mkdir ($nu.data-dir | path join "vendor/autoload")
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")

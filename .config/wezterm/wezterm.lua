@@ -8,13 +8,18 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- Set the right shell
-config.default_prog = { 'bash' }
+-- If there are issues on MacOS just link it to /usr/local/bin
+config.default_prog = { 'nu' }
 
 -- Color scheme
 config.color_scheme = 'GruvboxDark'
 -- Font
 config.font = wezterm.font 'Source Code Pro'
 config.font_size = 10
+
+-- Initial size of window, basically double the size of the normal one
+config.initial_cols = 160
+config.initial_rows = 48
 
 -- Opacity of window
 config.window_background_opacity = 1
