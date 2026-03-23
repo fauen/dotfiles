@@ -1,0 +1,32 @@
+show-summary: true
+show-tags: true
+show-fundamentals: true
+show-separator: true
+show-positions: true
+interval: 5
+currency: SEK
+currency-summary-only: false
+watchlist:
+  - MSFT
+  - BOKUS.ST
+  - SE0007439443
+#lots:
+#  - symbol: "ABNB"
+#    quantity: 35.0
+#    unit_cost: 146.00
+#  - symbol: "ARKW"
+#    quantity: 20.0
+#    unit_cost: 152.25
+#  - symbol: "ARKW"
+#    quantity: 20.0
+#    unit_cost: 145.35
+#    fixed_cost: 7.00 # e.g. brokerage commission fee
+#groups:
+#  - name: crypto
+#    watchlist:
+#      - SHIB-USD
+#      - VGX-USD
+#    lots:
+#      - symbol: SOL1-USD
+#        quantity: 17
+#        unit_cost: 159.10
