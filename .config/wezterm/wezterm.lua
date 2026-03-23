@@ -9,7 +9,7 @@ local config = wezterm.config_builder()
 
 -- Set the right shell
 -- If there are issues on MacOS just link it to /usr/local/bin
-config.default_prog = { 'nu' }
+config.default_prog = { '/usr/bin/env', 'bash' }
 
 -- Color scheme
 config.color_scheme = 'GruvboxDark'
