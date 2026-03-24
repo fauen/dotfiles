@@ -1,34 +1,34 @@
 # My personal .bashrc file
 
-if [ -e ~/src/dotfiles/bash/path ]; then
-	source ~/src/dotfiles/bash/path
+if [ -e ~/dev/dotfiles/bash/path ]; then
+	source ~/dev/dotfiles/bash/path
 else
 	echo "Can't find path file."
 fi
 
 # Checks if the shell is interactive and if it is, setup the prompt.
 if [[ $- == *i* ]]; then
-	source ~/src/dotfiles/bash/prompt
+	source ~/dev/dotfiles/bash/prompt
 else
 	echo "Not an interactive shell, prompt can't be setup."
 fi
 
 # The below checks if the files exist and if they so sources them.
-if [ -e ~/src/dotfiles/bash/functions ]; then
-	source ~/src/dotfiles/bash/functions
+if [ -e ~/dev/dotfiles/bash/functions ]; then
+	source ~/dev/dotfiles/bash/functions
 else
 	echo "Can't find the functions file."
 fi
 
-if [ -e ~/src/dotfiles/bash/aliases ]; then
-	source ~/src/dotfiles/bash/aliases
+if [ -e ~/dev/dotfiles/bash/aliases ]; then
+	source ~/dev/dotfiles/bash/aliases
 else
 	echo "Can't find the aliases file."
 fi
 
 # Exports which is platform specific
-if [ -e ~/src/dotfiles/bash/export ]; then
-	source ~/src/dotfiles/bash/export
+if [ -e ~/dev/dotfiles/bash/export ]; then
+	source ~/dev/dotfiles/bash/export
 else
 	echo "Can't find the export file."
 fi
@@ -51,4 +51,5 @@ PS2="$ >>> "
 # bind 'set vi-ins-mode-string I'
 # bind 'set vi-cmd-mode-string N'
 
-. "$HOME/.local/bin/env"
+# Why is this here? I don't remember at all.
+# . "$HOME/.local/bin/env"
