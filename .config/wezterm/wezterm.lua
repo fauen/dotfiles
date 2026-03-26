@@ -7,9 +7,20 @@ local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
 
+local function get_default_shell()
+  if wezterm.target_triple == 'aarch64-apple-darwin' or wezterm.target_triple == 'x86_64-apple-darwin' then
+    -- macOS: Use Homebrew Bash
+    --return { '/opt/homebrew/bin/bash', '--login' }
+    return { '/opt/homebrew/bin/bash' }
+  else
+    -- Linux: Use system Bash
+    return { '/usr/bin/env', 'bash' }
+  end
+end
 -- Set the right shell
 -- If there are issues on MacOS just link it to /usr/local/bin
-config.default_prog = { '/usr/bin/env', 'bash' }
+-- config.default_prog = { '/usr/bin/env', 'bash' }
+config.default_prog = get_default_shell()
 
 -- Color scheme
 config.color_scheme = 'GruvboxDark'
