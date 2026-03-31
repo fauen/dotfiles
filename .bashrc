@@ -35,10 +35,10 @@ fi
 
 
 # History specific settings
-HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S"
-HISTCONTROL=ignoreboth
-HISTSIZE=10000
-HISTFILESIZE=20000
+export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S"
+export HISTCONTROL=ignoreboth
+export HISTSIZE=10000
+export HISTFILESIZE=20000
 
 # PS2
 PS2="$ >>> "
