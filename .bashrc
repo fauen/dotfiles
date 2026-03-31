@@ -35,7 +35,7 @@ fi
 
 
 # History specific settings
-HISTTIMEFORMAT="%F %T "
+HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S"
 HISTCONTROL=ignoreboth
 HISTSIZE=10000
 HISTFILESIZE=20000
