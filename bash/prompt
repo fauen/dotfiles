@@ -22,4 +22,9 @@ function prompter() {
 
 #PROMPT_COMMAND=prompter
 
+# Preserve the default PROMPT_COMMAND for history timestamps
+__default_prompt_command="${PROMPT_COMMAND}"
+# Initialize starship
 eval "$(starship init bash)"
+# Restore the default prompt command behavior for history
+PROMPT_COMMAND="${__default_prompt_command}${PROMPT_COMMAND}"

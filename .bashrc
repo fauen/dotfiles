@@ -35,7 +35,7 @@ fi
 
 
 # History specific settings
-export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S"
+export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 export HISTCONTROL=ignoreboth
 export HISTSIZE=10000
 export HISTFILESIZE=20000
