@@ -23,6 +23,7 @@ alias ll='ls -alF'
 alias la='ls A'
 alias l='ls -CF'
 
+alias ..='echo "cd .."; cd ..'
 alias grep='grep --color=always'
 alias hackmainframe='echo "[32m"; hd /dev/urandom'
 alias tmuxs="tmux new-session -s ${1}"
