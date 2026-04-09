@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [[ $(uname) == "Linux" ]]; then
 	export EDITOR=vim
 	export VISUAL=vim

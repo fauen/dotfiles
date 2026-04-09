@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Author Daniel "fauen" Bäckman
 # https://github.com/fauen
 
@@ -12,25 +12,31 @@ if [[ $(uname) == "Linux" && ! $(command -v lsd) ]]; then
 		sudo apt install lsd
 	elif [[ $(cat /proc/version) == *"arch"* ]]; then
 		sudo pacman -S lsd
+	elif [[ $(cat /proc/version) == *"Red Hat"* ]]; then
+		sudo dnf install lsd
 	fi
 fi
 
+# ls tweaks
 alias ls='lsd'
 alias ll='ls -alF'
 alias la='ls A'
 alias l='ls -CF'
+
 alias grep='grep --color=always'
-alias myip='curl ipv4.icanhazip.com'
+alias myip='curl ip.backman.io'
 alias hackmainframe='echo "[32m"; hd /dev/urandom'
 alias stocks=stonks
 alias weather=wttr
 alias tmuxs="tmux new-session -s ${1}"
 
 # Aliases for GitHub
-alias gs='git status'
+alias ga='git add . --all'
+alias gb='git branch'
+alias gc='git commit -a'
+alias gl='git log'
 alias gp='git pull'
-alias gitter='git add .; git commit -m "updates"; git push'
-alias gits='git add .; git commit; git push'
+alias gs='git status'
 
 # Aliases for updates
 alias windows-update='sudo apt update; sudo apt upgrade -y; sudo apt autoremove'

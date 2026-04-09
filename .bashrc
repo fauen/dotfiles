@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # My personal .bashrc file
 
 if [ -e ~/dev/dotfiles/bash/path ]; then
