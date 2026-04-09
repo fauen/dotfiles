@@ -8,6 +8,10 @@ copy() {
 	clip.exe
 }
 
+date-conv() {
+	date -r $1 "+%Y-%m-%d %H:%M:%S"
+}
+
 myip() {
 	if [ -z $1 ]; then
 		curl -sS ip.backman.io
