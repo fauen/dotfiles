@@ -35,8 +35,9 @@ alias ga='git add . --all'
 alias gb='git branch'
 alias gc='git commit -a'
 alias gl='git log'
-alias gp='git pull'
+alias gp='git push'
 alias gs='git status'
+alias gu='git pull' # Think of this as git update
 
 # Aliases for updates
 alias windows-update='sudo apt update; sudo apt upgrade -y; sudo apt autoremove'
