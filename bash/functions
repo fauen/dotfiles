@@ -18,8 +18,8 @@ myip() {
 
 weather() {
 	if [ -z $1 ]; then
-		curl wttr.in/?m
+		curl -sS wttr.in/?m
 	else
-		curl wttr.in/${1}?m
+		curl -sS wttr.in/${1}?m
 	fi
 }
