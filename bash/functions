@@ -2,20 +2,24 @@
 # Author Daniel "fauen" Bäckman
 # https://github.com/fauen
 
-wttr()
-{
+copy() {
+	pbcopy 2>/dev/null ||
+	wl-copy 2>/dev/null ||
+	clip.exe
+}
+
+myip() {
+	if [ -z $1 ]; then
+		curl -sS ip.backman.io
+	else
+		curl -sS ipall.backman.io
+	fi
+}
+
+weather() {
 	if [ -z $1 ]; then
 		curl wttr.in/?m
 	else
 		curl wttr.in/${1}?m
-	fi
-}
-
-stonks()
-{
-	if [ -z $1 ]; then
-		curl https://terminal-stocks.herokuapp.com/market-summary
-	else
-		curl https://terminal-stocks.herokuapp.com/${1}
 	fi
 }

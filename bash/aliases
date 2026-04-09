@@ -24,10 +24,7 @@ alias la='ls A'
 alias l='ls -CF'
 
 alias grep='grep --color=always'
-alias myip='curl ip.backman.io'
 alias hackmainframe='echo "[32m"; hd /dev/urandom'
-alias stocks=stonks
-alias weather=wttr
 alias tmuxs="tmux new-session -s ${1}"
 
 # Aliases for GitHub
