@@ -1,13 +1,6 @@
-adguard
-alfred
-alt-tab
-asana
 bartender
 joplin
 megasync
-powershell
-rectangle
 spotify
 starship
 stats
-visual-studio-code
