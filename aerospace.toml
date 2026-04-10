@@ -241,10 +241,6 @@ automatically-unhide-macos-hidden-apps = false
     run = "move-node-to-workspace M"
 
 [[on-window-detected]]
-    if.app-id = "com.facebook.archon.developerID"
-    run = "move-node-to-workspace M"
-
-[[on-window-detected]]
     if.app-id = "com.apple.MobileSMS"
     run = "move-node-to-workspace M"
 
@@ -261,20 +257,8 @@ automatically-unhide-macos-hidden-apps = false
     run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
-    if.app-id = "com.electron.asana"
-    run = "move-node-to-workspace 1"
-
-[[on-window-detected]]
     if.app-id = "com.microsoft.Outlook"
     run = "move-node-to-workspace 1"
-
-[[on-window-detected]]
-    if.app-id = "org.alacritty"
-    run = "move-node-to-workspace T"
-
-[[on-window-detected]]
-    if.app-id = "com.vivaldi.Vivaldi"
-    run = "move-node-to-workspace B"
 
 [[on-window-detected]]
     if.app-id = "net.cozic.joplin-desktop"
