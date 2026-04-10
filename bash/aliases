@@ -35,8 +35,9 @@ alias gc='git clone'
 alias gci='git commit -a'
 alias gco='git checkout'
 alias gl='git log'
-alias gp='git push'
+alias gp='git push origin HEAD'
 alias gs='git status'
+alias gt='git tag'
 alias gu='git pull' # Think of this as git update
 alias nb='git checkout -b "$USER-$(date +%s)"' # new branch
 
