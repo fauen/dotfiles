@@ -8,7 +8,7 @@ copy() {
 	clip.exe
 }
 
-date-conv() {
+epoch() {
 	date -r $1 "+%Y-%m-%d %H:%M:%S"
 }
 
