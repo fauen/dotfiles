@@ -12,6 +12,30 @@ epoch() {
 	date -r $1 "+%Y-%m-%d %H:%M:%S"
 }
 
+gsall() {
+	local original_dir=$(pwd)
+	for dir in */; do
+		if [[ -d "$dir" ]]; then
+			echo -e "\n$(tput rev)entering folder: $dir $(tput sgr0)"
+			cd "$dir"
+			git status
+			cd "$original_dir"
+		fi
+	done
+}
+
+guall() {
+	local original_dir=$(pwd)
+	for dir in */; do
+		if [[ -d "$dir" ]]; then
+			echo -e "\n$(tput rev)entering folder: $dir $(tput sgr0)"
+			cd "$dir"
+			git pull
+			cd "$original_dir"
+		fi
+	done
+}
+
 myip() {
 	if [ -z $1 ]; then
 		curl -sS ip.backman.io
