@@ -4,3 +4,25 @@ megasync
 spotify
 starship
 stats
+bash
+btop
+powershell
+sqlite
+starship
+tldr
+tmux
+tree
+vifm
+
+# cask
+1password
+1password-cli
+aerospace
+bartender
+discord
+duckduckgo
+firefox
+microsoft-edge
+megasync
+joplin
+wezterm
