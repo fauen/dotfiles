@@ -45,6 +45,12 @@ export HISTFILESIZE=20000
 # PS2
 PS2="$ >>> "
 
+# Run fastfetch at start of terminal
+if ! fastfetch; then
+	printf "%s\n" "No fastfetch installed."
+	return 1
+fi
+
 # Set bash to use vim keys
 # As I have my "custom" prompt which resets the readline options I have them
 # here instead of .inputec and I'm skipping set -o vi
