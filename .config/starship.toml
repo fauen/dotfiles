@@ -1,7 +1,7 @@
 format = '$all'
-scan_timeout = 10
+scan_timeout = 100
 add_newline = false
-command_timeout = 600
+command_timeout = 6000
 
 [aws]
 disabled = true
