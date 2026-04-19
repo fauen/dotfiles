@@ -25,7 +25,7 @@ config.default_prog = get_default_shell()
 -- Color scheme
 config.color_scheme = 'GruvboxDark'
 -- Font
-config.font = wezterm.font 'JetBrainsMono NF'
+config.font = wezterm.font 'JetBrains Mono'
 config.font_size = 10
 
 -- Initial size of window, basically double the size of the normal one
