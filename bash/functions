@@ -39,6 +39,10 @@ guall() {
 myip() {
 	if [[ $1 == "-a" ]]; then
 		curl -sS ipall.backman.io
+	elif [[ $1 =~ ^(-h|--help)$ ]]; then
+		printf "%s\n" "Usage: weather [-a] [--help]"
+		printf "%s\n" "    -a		Get all ip information."
+		printf "%s\n" "    --help    	Show this help message."
 	else
 		curl -sS ip.backman.io
 	fi
@@ -53,8 +57,8 @@ weather() {
 		curl -sS wttr.in/${2}?m
 	elif [[ $1 =~ ^(-h|--help)$ ]]; then
 		printf "%s\n" "Usage: weather [-c CITY] [--help]"
-		printf "%s\n" "    -c CITY    Get weather for the specified city."
-		printf "%s\n" "    --help    Show this help message."
+		printf "%s\n" "    -c CITY	Get weather for the specified city."
+		printf "%s\n" "    --help	Show this help message."
 	else
 		curl -sS wttr.in/?m
 	fi
