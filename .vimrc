@@ -13,7 +13,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'mattn/calendar-vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
-" Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
 
