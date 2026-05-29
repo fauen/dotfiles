@@ -94,6 +94,6 @@ windows-update() {
 			sudo apt update && sudo apt upgrade -y && sudo apt autoremove
 		fi
 	elif [[ $(uname) == "Darwin" && $(command -v brew) ]]; then
-		brew upgrade && brew update
+		brew update && brew upgrade
 	fi
 }
