@@ -83,3 +83,17 @@ weather() {
 		curl -sS wttr.in/?m
 	fi
 }
+
+windows-update() {
+	if [[ $(uname) == "Linux" ]]; then
+		if [[ $(cat /proc/version) == *"Red Hat"* ]]; then
+			sudo dnf update
+		elif [[ $(cat /proc/version) == *"arch"* ]]; then
+			sudo pacman -Syu
+		elif [[ $(cat /proc/version) == *"ubuntu"* ]]; then
+			sudo apt update && sudo apt upgrade -y && sudo apt autoremove
+		fi
+	elif [[ $(uname) == "Darwin" && $(command -v brew) ]]; then
+		brew upgrade && brew update
+	fi
+}
