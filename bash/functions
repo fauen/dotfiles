@@ -86,11 +86,11 @@ weather() {
 
 windows-update() {
 	if [[ $(uname) == "Linux" ]]; then
-		if [[ $(cat /proc/version) == *"Red Hat"* ]]; then
+		if [[ $(cat /etc/os-release) == *"fedora"* ]]; then
 			sudo dnf update
-		elif [[ $(cat /proc/version) == *"arch"* ]]; then
+		elif [[ $(cat /etc/os-release) == *"arch"* ]]; then
 			sudo pacman -Syu
-		elif [[ $(cat /proc/version) == *"ubuntu"* ]]; then
+		elif [[ $(cat /etc/os-release) == *"ubuntu"* ]]; then
 			sudo apt update && sudo apt upgrade -y && sudo apt autoremove
 		fi
 	elif [[ $(uname) == "Darwin" && $(command -v brew) ]]; then
