@@ -24,6 +24,7 @@ alias la='ls A'
 alias l='ls -CF'
 
 alias ..='echo "cd .."; cd ..'
+alias ...='cd; clear; fastfetch'
 alias grep='grep --color=always'
 alias hackmainframe='echo "[32m"; hd /dev/urandom'
 alias tmuxs="tmux new-session -s ${1}"
