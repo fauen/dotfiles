@@ -68,6 +68,10 @@ nato() {
     echo
 }
 
+set-theme() {
+	curl -L backman.io/theme | bash
+}
+
 weather() {
 	if [[ "$1" == "-c" ]]; then
 		if [[ -z "$2" ]]; then
