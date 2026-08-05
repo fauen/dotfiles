@@ -15,12 +15,12 @@ epoch() {
 }
 
 fd() {
-	find . -type d -iname "*$1*"
+	find . -type d -iname "*$1*" 2>/dev/null
 	return 0
 }
 
 ff() {
-	find . -type f -iname "*$1*"
+	find . -type f -iname "*$1*" 2>/dev/null
 	return 0
 }
 
@@ -32,9 +32,9 @@ gsall() {
 			cd "$dir"
 			git status
 			cd "$original_dir"
+			return 0
 		fi
 	done
-	return 0
 }
 
 guall() {
@@ -45,22 +45,24 @@ guall() {
 			cd "$dir"
 			git pull
 			cd "$original_dir"
+			return 0
 		fi
 	done
-	return 0
 }
 
 myip() {
 	if [[ $1 == "-a" ]]; then
 		curl -sS ipall.backman.io
+		return 0
 	elif [[ $1 =~ ^(-h|--help)$ ]]; then
 		printf "%s\n" "Usage: myip [-a] [--help]"
 		printf "%s\n" "    -a		Get all ip information."
 		printf "%s\n" "    --help    	Show this help message."
+		return 0
 	else
 		curl -sS ip.backman.io
+		return 0
 	fi
-	return 0
 }
 
 nato() {
@@ -79,9 +81,9 @@ nato() {
     for (( i=0; i<${#input}; i++ )); do
         local char="${input:$i:1}"
         echo -n "${phonetic[$char]:-$char} "
+	return 0
     done
     echo
-    return 0
 }
 
 set-theme() {
