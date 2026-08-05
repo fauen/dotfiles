@@ -40,7 +40,7 @@ myip() {
 	if [[ $1 == "-a" ]]; then
 		curl -sS ipall.backman.io
 	elif [[ $1 =~ ^(-h|--help)$ ]]; then
-		printf "%s\n" "Usage: weather [-a] [--help]"
+		printf "%s\n" "Usage: myip [-a] [--help]"
 		printf "%s\n" "    -a		Get all ip information."
 		printf "%s\n" "    --help    	Show this help message."
 	else
