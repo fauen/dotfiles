@@ -32,9 +32,9 @@ gsall() {
 			cd "$dir"
 			git status
 			cd "$original_dir"
-			return 0
 		fi
 	done
+	return 0
 }
 
 guall() {
@@ -45,9 +45,9 @@ guall() {
 			cd "$dir"
 			git pull
 			cd "$original_dir"
-			return 0
 		fi
 	done
+	return 0
 }
 
 myip() {
@@ -66,24 +66,24 @@ myip() {
 }
 
 nato() {
-    local input="${1^^}"
-    declare -A phonetic=(
-        ["A"]="Alpha" ["B"]="Bravo" ["C"]="Charlie" ["D"]="Delta" ["E"]="Echo"
-        ["F"]="Foxtrot" ["G"]="Golf" ["H"]="Hotel" ["I"]="India" ["J"]="Juliet"
-        ["K"]="Kilo" ["L"]="Lima" ["M"]="Mike" ["N"]="November" ["O"]="Oscar"
-        ["P"]="Papa" ["Q"]="Quebec" ["R"]="Romeo" ["S"]="Sierra" ["T"]="Tango"
-        ["U"]="Uniform" ["V"]="Victor" ["W"]="Whiskey" ["X"]="X-ray" ["Y"]="Yankee"
-        ["Z"]="Zulu"
-        ["0"]="Zero" ["1"]="One" ["2"]="Two" ["3"]="Three" ["4"]="Four"
-        ["5"]="Five" ["6"]="Six" ["7"]="Seven" ["8"]="Eight" ["9"]="Nine"
-    )
+	local input="${1^^}"
+	declare -A phonetic=(
+		["A"]="Alpha" ["B"]="Bravo" ["C"]="Charlie" ["D"]="Delta" ["E"]="Echo"
+		["F"]="Foxtrot" ["G"]="Golf" ["H"]="Hotel" ["I"]="India" ["J"]="Juliet"
+		["K"]="Kilo" ["L"]="Lima" ["M"]="Mike" ["N"]="November" ["O"]="Oscar"
+		["P"]="Papa" ["Q"]="Quebec" ["R"]="Romeo" ["S"]="Sierra" ["T"]="Tango"
+		["U"]="Uniform" ["V"]="Victor" ["W"]="Whiskey" ["X"]="X-ray" ["Y"]="Yankee"
+		["Z"]="Zulu"
+		["0"]="Zero" ["1"]="One" ["2"]="Two" ["3"]="Three" ["4"]="Four"
+		["5"]="Five" ["6"]="Six" ["7"]="Seven" ["8"]="Eight" ["9"]="Nine"
+		)
 
-    for (( i=0; i<${#input}; i++ )); do
-        local char="${input:$i:1}"
-        echo -n "${phonetic[$char]:-$char} "
-	return 0
-    done
-    echo
+	for (( i=0; i<${#input}; i++ )); do
+		local char="${input:$i:1}"
+		echo -n "${phonetic[$char]:-$char} "
+	done
+	echo
+return 0
 }
 
 set-theme() {
