@@ -10,8 +10,18 @@ copy() {
 }
 
 epoch() {
-	date -r $1 "+%Y-%m-%d %H:%M:%S"
-	return 0
+	if [[ $1 == "--now" ]]; then
+		date +%s
+		return 0
+	elif [[ -n $1 ]]; then
+		date -r $1 "+%Y-%m-%d %H:%M:%S"
+		return 0
+	else
+		printf "%s\n" "Usage: epoch [--now] [TIMESTAMP]"
+		printf "%s\n" "    --now	Show the current epoch timestamp."
+		printf "%s\n" "    TIMESTAMP	Convert the given epoch timestamp to a human-readable date."
+		return 0
+	fi
 }
 
 fd() {
