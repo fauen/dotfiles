@@ -52,7 +52,7 @@ config.keys = {
 	},
 	{
 		key = '_',
-		mods = 'LEADER',
+		mods = 'LEADER|SHIFT',
 		action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
 	},
 	{
