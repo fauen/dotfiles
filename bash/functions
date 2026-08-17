@@ -10,18 +10,26 @@ copy() {
 }
 
 epoch() {
-	if [[ $1 == "--now" ]]; then
-		date +%s
-		return 0
-	elif [[ -n $1 ]]; then
-		date -r $1 "+%Y-%m-%d %H:%M:%S"
-		return 0
-	else
-		printf "%s\n" "Usage: epoch [--now] [TIMESTAMP]"
-		printf "%s\n" "    --now	Show the current epoch timestamp."
-		printf "%s\n" "    TIMESTAMP	Convert the given epoch timestamp to a human-readable date."
-		return 0
-	fi
+	case "$1" in
+		--now)
+			date +%s
+			;;
+		"")
+			printf "%s\n" "Usage: epoch [--now] [TIMESTAMP]"
+			printf "%s\n" "    --now	Show the current epoch timestamp."
+			printf "%s\n" "    TIMESTAMP	Convert the given epoch timestamp to a human-readable date."
+			;;
+		*)
+			if date -r 0 &>/dev/null; then
+				# This is for macOS
+				date -r "$1" "+%Y-%m-%d %H:%M:%S"
+			else
+				date -d @"$1" "+%Y-%m-%d %H:%M:%S"
+				# This is for Linux
+			fi
+			;;
+	esac
+	return 0
 }
 
 fd() {
@@ -61,18 +69,20 @@ guall() {
 }
 
 myip() {
-	if [[ $1 == "-a" ]]; then
-		curl -sS ipall.backman.io
-		return 0
-	elif [[ $1 =~ ^(-h|--help)$ ]]; then
-		printf "%s\n" "Usage: myip [-a] [--help]"
-		printf "%s\n" "    -a		Get all ip information."
-		printf "%s\n" "    --help    	Show this help message."
-		return 0
-	else
-		curl -sS ip.backman.io
-		return 0
-	fi
+	case "$1" in
+		-a)
+			curl -sS "ipall.backman.io"
+			;;
+		-h|--help)
+			printf "%s\n" "Usage: myip [-a] [--help]"
+			printf "%s\n" "    -a		Get all ip information."
+			printf "%s\n" "    --help    	Show this help message."
+			;;
+		*)
+			curl -sS "ip.backman.io"
+			;;
+	esac
+	return 0
 }
 
 nato() {
@@ -102,22 +112,24 @@ set-theme() {
 }
 
 weather() {
-	if [[ "$1" == "-c" ]]; then
-		if [[ -z "$2" ]]; then
-			printf "%s\n" "No city specified after -c." >&2
-			return 1
-		fi
-		curl -sS wttr.in/${2}?m
-		return 0
-	elif [[ $1 =~ ^(-h|--help)$ ]]; then
-		printf "%s\n" "Usage: weather [-c CITY] [--help]"
-		printf "%s\n" "    -c CITY	Get weather for the specified city."
-		printf "%s\n" "    --help	Show this help message."
-		return 0
-	else
-		curl -sS wttr.in/?m
-		return 0
-	fi
+	case "$1" in
+		-c)
+			if [[ -z "$2" ]]; then
+				printf "%s\n" "No city specified after -c." >&2
+				return 1
+			fi
+			curl -sS "wttr.in/${2}?m"
+			;;
+		-h|--help)
+			printf "%s\n" "Usage: weather [-c CITY] [--help]"
+			printf "%s\n" "    -c CITY	Get weather for the specified city."
+			printf "%s\n" "    --help	Show this help message."
+			;;
+		*)
+			curl -sS "wttr.in/?m"
+			;;
+	esac
+	return 0
 }
 
 windows-update() {
