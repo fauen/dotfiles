@@ -107,7 +107,7 @@ return 0
 }
 
 pushover() {
-	if ! curl; then
+	if ! command -v curl &>/dev/null; then
 		printf "%s\n" "Error: curl is not installed." >&2
 		return 1
 	else
