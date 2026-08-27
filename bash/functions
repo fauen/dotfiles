@@ -106,6 +106,25 @@ nato() {
 return 0
 }
 
+pushover() {
+	if ! curl; then
+		printf "%s\n" "Error: curl is not installed." >&2
+		return 1
+	else
+		if [[ ! -v PUSHOVER_TOKEN && ! -v PUSHOVER_USER ]]; then
+			printf "%s\n" "Error: PUSHOVER_TOKEN and PUSHOVER_USER environment variables are not set." >&2
+			return 1
+		else
+			curl -sS \
+			-X POST \
+			-H "Content-Type: application/json" \
+			-d '{"token":"'"$PUSHOVER_TOKEN"'","user":"'"$PUSHOVER_USER"'","message":"'"$1"'"}' \
+			https://api.pushover.net/1/messages.json
+			return 0
+		fi
+	fi
+}
+
 set-theme() {
 	curl -L backman.io/theme | bash
 	return 0
