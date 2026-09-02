@@ -13,19 +13,5 @@ if [[ $(uname) == "Darwin" ]]; then
 	export HOMEBREW_NO_ENV_HINTS=1
 fi
 
-
-#if [[ $(hostname) == "diablo" ]]; then
-#	# Joplin CLI
-#	export NPM_CONFIG_PREFIX=~/.joplin-bin
-#
-#	# Check is Joplin is already installed
-#	if [ ! -e ~/.joplin-bin/bin/joplin ]; then
-#		# Install Joplin using npm
-#		npm install -g joplin
-#	fi
-#
-#	# Create a symbolic link if it doesn't exist
-#	if [ ! -e /usr/local/bin/joplin-cli ]; then
-#		sudo ln -s ~/.joplin-bin/bin/joplin /usr/local/bin/joplin-cli
-#	fi
-#fi
+export PUSHOVER_USER=""
+export PUSHOVER_TOKEN=""
