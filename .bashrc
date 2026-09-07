@@ -35,6 +35,13 @@ else
 	echo "Can't find the export file."
 fi
 
+# Local bashvars file which is not tracked by git and can be used to store sensitive information.
+if [ -e ~/.bashvars ]; then
+	source ~/.bashvars
+else
+	printf "%s\n" "No .bashvars file found."
+fi
+
 
 # History specific settings
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
