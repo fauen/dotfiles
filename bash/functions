@@ -10,13 +10,13 @@ bash_load_vars() {
 
 	# Sign in to 1Password if not already signed in
 	if ! op whoami >/dev/null 2>&1; then
-		printf "%s" "Signing in to 1Password..."
+		printf "%s\n" "Signing in to 1Password..."
 		eval $(op signin)
 	fi
 
 	# Resolve the op:// references and update the variables using bash -c
-	PUSHOVER_USER=$(op run --no-masking -- bash -c printf "%s" "$PUSHOVER_USER")
-	PUSHOVER_TOKEN=$(op run --no-masking -- bash -c printf "%s" "$PUSHOVER_TOKEN")
+	PUSHOVER_USER=$(op run --no-masking -- bash -c 'printf "%s" "$PUSHOVER_USER"')
+	PUSHOVER_TOKEN=$(op run --no-masking -- bash -c 'printf "%s" "$PUSHOVER_TOKEN"')
 
 	# Re-export the resolved variables
 	export PUSHOVER_USER
