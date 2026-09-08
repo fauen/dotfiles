@@ -2,6 +2,28 @@
 # Author Daniel "fauen" Bäckman
 # https://github.com/fauen
 
+
+bash_load_vars() {
+	# Always define the variables as op:// references
+	export PUSHOVER_USER="op://Private/xqhiaetd3alup65lg7el564a5i/user key"
+	export PUSHOVER_TOKEN="op://Private/m777gosj6too42y3gisubxixjq/api token"
+
+	# Sign in to 1Password if not already signed in
+	if ! op whoami >/dev/null 2>&1; then
+		printf "%s" "Signing in to 1Password..."
+		eval $(op signin)
+	fi
+
+	# Resolve the op:// references and update the variables using bash -c
+	PUSHOVER_USER=$(op run --no-masking -- bash -c printf "%s" "$PUSHOVER_USER")
+	PUSHOVER_TOKEN=$(op run --no-masking -- bash -c printf "%s" "$PUSHOVER_TOKEN")
+
+	# Re-export the resolved variables
+	export PUSHOVER_USER
+	export PUSHOVER_TOKEN
+}
+
+
 copy() {
 	pbcopy 2>/dev/null ||
 	wl-copy 2>/dev/null ||
@@ -46,7 +68,8 @@ gsall() {
 	local original_dir=$(pwd)
 	for dir in */; do
 		if [[ -d "$dir" ]]; then
-			echo -e "\n$(tput rev)entering folder: $dir $(tput sgr0)"
+			#echo -e "\n$(tput rev)entering folder: $dir $(tput sgr0)"
+			printf "\n%sEntering folder: %s%s\n" "$(tput rev)" "$dir" "$(tput sgr0)"
 			cd "$dir"
 			git status
 			cd "$original_dir"
@@ -59,7 +82,8 @@ guall() {
 	local original_dir=$(pwd)
 	for dir in */; do
 		if [[ -d "$dir" ]]; then
-			echo -e "\n$(tput rev)entering folder: $dir $(tput sgr0)"
+			#echo -e "\n$(tput rev)entering folder: $dir $(tput sgr0)"
+			printf "\n%sEntering folder: %s%s\n" "$(tput rev)" "$dir" "$(tput sgr0)"
 			cd "$dir"
 			git pull
 			cd "$original_dir"
@@ -100,19 +124,20 @@ nato() {
 
 	for (( i=0; i<${#input}; i++ )); do
 		local char="${input:$i:1}"
-		echo -n "${phonetic[$char]:-$char} "
+		#echo -n "${phonetic[$char]:-$char} "
+		printf "%s\n" "${phonetic[$char]:-$char} "
 	done
 	echo
 return 0
 }
 
 pushover() {
-	if ! command -v curl &>/dev/null; then
+	if ! [[ -x $(command -v curl) ]]; then
 		printf "%s\n" "Error: curl is not installed." >&2
 		return 1
 	else
-		if [[ ! -v PUSHOVER_TOKEN && ! -v PUSHOVER_USER ]]; then
-			printf "%s\n" "Error: PUSHOVER_TOKEN and PUSHOVER_USER environment variables are not set." >&2
+		if ! [[ -v PUSHOVER_TOKEN && -v PUSHOVER_USER ]]; then
+			printf "%s\n" "Error: PUSHOVER_TOKEN or PUSHOVER_USER environment variables are not set." >&2
 			return 1
 		else
 			curl -sS \
@@ -152,7 +177,7 @@ weather() {
 }
 
 windows-update() {
-	if [[ $(uname) == "Linux" ]]; then
+	if [[ $(uname -s) == "Linux" ]]; then
 		if [[ $(cat /etc/os-release) == *"fedora"* ]]; then
 			sudo dnf update
 		elif [[ $(cat /etc/os-release) == *"arch"* ]]; then
@@ -160,7 +185,7 @@ windows-update() {
 		elif [[ $(cat /etc/os-release) == *"ubuntu"* ]]; then
 			sudo apt update && sudo apt upgrade -y && sudo apt autoremove
 		fi
-	elif [[ $(uname) == "Darwin" && $(command -v brew) ]]; then
+	elif [[ $(uname -s) == "Darwin" && $(command -v brew) ]]; then
 		brew update && brew upgrade
 	fi
 }
