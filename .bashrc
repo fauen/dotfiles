@@ -36,11 +36,11 @@ else
 fi
 
 # Local bashvars file which is not tracked by git and can be used to store sensitive information.
-if [ -e ~/.bashvars ]; then
-	source ~/.bashvars
-else
-	printf "%s\n" "No .bashvars file found."
-fi
+# if [ -e ~/.bashvars ]; then
+# 	source ~/.bashvars
+# else
+# 	printf "%s\n" "No .bashvars file found."
+# fi
 
 
 # History specific settings
