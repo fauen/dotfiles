@@ -110,7 +110,12 @@ myip() {
 }
 
 nameday() {
-	curl -sS -X GET "https://sholiday.faboul.se/dagar/v2.1/" | jq -r '.dagar[0].namnsdag[]'
+	if ! [[ -x $(command -v curl) ]] || ! [[ -x $(command -v jq) ]]; then
+		printf "%s\n" "Error: curl or jq is not installed or not executable." >&2
+		return 1
+	else
+		curl -sS -X GET "https://sholiday.faboul.se/dagar/v2.1/" | jq -r '.dagar[0].namnsdag[]'
+	fi
 }
 
 nato() {
