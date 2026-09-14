@@ -109,6 +109,10 @@ myip() {
 	return 0
 }
 
+nameday() {
+	curl -sS -X GET "https://sholiday.faboul.se/dagar/v2.1/" | jq -r '.dagar[0].namnsdag[]'
+}
+
 nato() {
 	local input="${1^^}"
 	declare -A phonetic=(
