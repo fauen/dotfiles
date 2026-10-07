@@ -5,8 +5,8 @@
 
 bash_load_vars() {
 	# Always define the variables as op:// references
-	export PUSHOVER_USER="op://Private/xqhiaetd3alup65lg7el564a5i/user key"
-	export PUSHOVER_TOKEN="op://Private/m777gosj6too42y3gisubxixjq/api token"
+	export PUSHOVER_USER="op://my/Private/xqhiaetd3alup65lg7el564a5i/user key"
+	export PUSHOVER_TOKEN="op://my/Private/m777gosj6too42y3gisubxixjq/api token"
 
 	# Sign in to 1Password if not already signed in
 	if ! op whoami >/dev/null 2>&1; then
