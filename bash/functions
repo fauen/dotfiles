@@ -4,11 +4,15 @@
 
 
 bash_load_vars() {
-	PUSHOVER_USER=$(op read --account my "op://Private/xqhiaetd3alup65lg7el564a5i/user key")
-	PUSHOVER_TOKEN=$(op read --account my "op://Private/g4c56b5b24456lopv6jgeoszoi/credential")
+	set -a
+	source "$HOME/.env/pushover.env"
+	set +a
+	# Old version 
+	# PUSHOVER_USER=$(op read --account my "op://Private/xqhiaetd3alup65lg7el564a5i/user key")
+	# PUSHOVER_TOKEN=$(op read --account my "op://Private/g4c56b5b24456lopv6jgeoszoi/credential")
 
-	export PUSHOVER_USER
-	export PUSHOVER_TOKEN
+	# export PUSHOVER_USER
+	# export PUSHOVER_TOKEN
 }
 
 
