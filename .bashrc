@@ -2,6 +2,12 @@
 
 # My personal .bashrc file
 
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+    *) return;;
+esac
+
 if [ -e ~/dev/dotfiles/bash/path ]; then
 	source ~/dev/dotfiles/bash/path
 else
